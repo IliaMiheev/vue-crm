@@ -38,7 +38,7 @@ const selectNotify = ref<string>('All Notifications');
         <p class="text-subtitle-2 text-medium-emphasis mt-1">It is a long established fact that a reader will be distracted</p>
         <div class="mt-3">
           <v-chip size="small" text="Unread" color="error" variant="tonal" class="mr-2" />
-          <v-chip size="small" text="New" color="warning" variant="tonal" />
+          <v-chip size="small" text="Новый" color="warning" variant="tonal" />
         </div>
       </v-list-item>
       <v-divider></v-divider>

@@ -90,7 +90,7 @@ function getWidth (index:number){
       </div>
       <div v-if="!blogStore.loading">
 
-        <v-text-field v-model="filter" variant="solo-filled" class="pa-2" label="Filter"></v-text-field>
+        <v-text-field v-model="filter" variant="solo-filled" class="pa-2" label="Фильтровать"></v-text-field>
 
         <v-divider class="mb-10" />
         <v-row>

@@ -157,7 +157,7 @@ const barChart1 = {
   ]
 };
 
-const items = ref(['Today', 'This month', 'This year']);
+const items = ref(['Сегодня', 'В этом месяце', 'В этом году']);
 </script>
 
 <template>

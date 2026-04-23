@@ -1,11 +1,11 @@
 export function formatToCurrencyString(price: number):string{
 
-      return new Intl.NumberFormat('en-AU', {
-            style: 'currency',
-            currency: 'AUD',
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-      }).format(price)
+      return new Intl.NumberFormat('ru-RU', {
+          style: 'currency',
+          currency: 'AUD',
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+      }).format(price);
 }
 
 export function formatToCurrencyNumber(price: number):number {

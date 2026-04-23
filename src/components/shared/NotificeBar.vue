@@ -20,7 +20,7 @@ defineEmits(['onClose'])
             {{ props.text }}
             <template v-slot:actions>
                 <v-btn color="blue" variant="text" @click="$emit('onClose')">
-                    Close
+                    Закрыть
                 </v-btn>
             </template>
         </v-snackbar>

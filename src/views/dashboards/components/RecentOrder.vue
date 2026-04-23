@@ -84,7 +84,7 @@ const projects = shallowRef([
         <tr>
           <th class="text-left text-caption font-weight-bold text-uppercase">Tracking no.</th>
           <th class="text-left text-caption font-weight-bold text-uppercase">Product name</th>
-          <th class="text-right text-caption font-weight-bold text-uppercase" style="min-width: 100px">Total order</th>
+          <th class="text-right text-caption font-weight-bold text-uppercase" style="min-width: 100px">Итого заказов</th>
           <th class="text-left text-caption font-weight-bold text-uppercase">Status</th>
           <th class="text-right text-caption font-weight-bold text-uppercase">Total amount</th>
         </tr>

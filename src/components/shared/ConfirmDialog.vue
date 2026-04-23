@@ -17,18 +17,18 @@ defineEmits(['onConfirm', 'onCancel'])
   
         <v-card
           prepend-icon="mdi-map-marker"
-          text="Would you like to delete this record?"
-          title="Confirm Dialog"
+          text="Вы действительно хотите удалить эту запись?"
+          title="Подтвердите действие"
         >
           <template v-slot:actions>
             <v-spacer></v-spacer>
   
             <v-btn @click="$emit('onConfirm')" color="secondary" variant="plain">
-              Confirm
+              Подтвердить
             </v-btn>
   
             <v-btn @click="$emit('onCancel')" color="primary" variant="outlined">
-              Cancel
+              Отменить
             </v-btn>
           </template>
         </v-card>

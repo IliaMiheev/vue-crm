@@ -34,35 +34,35 @@ export interface menu {
 }
 
 const sidebarItem: menu[] = [
-  { header: 'Home' },
+  { header: 'Главная' },
   {
-    title: 'Dashboard',
+    title: 'Дашборд',
     icon: DashboardIcon,
     to: '/dashboard'
   },
   {
-    title: 'Customer',
+    title: 'Клиенты',
     icon: UsersIcon,
     to: '/customer'
   },
   {
-    title: 'Product',
+    title: 'Товары',
     icon: Stack3Icon,
     to: '/product'
   },
   {
-    title: 'Order',
+    title: 'Заказы',
     icon: TruckDeliveryIcon,
     to: '/order'
   },
-  { divider: true },
-  { header: 'Marketing' }
-  ,
-  {
-    title: 'Blog',
-    icon: TemplateIcon,
-    to: '/blog'
-  },
+  // { divider: true },
+  // { header: 'Маркетинг' }
+  // ,
+  // {
+  //   title: 'Блог',
+  //   icon: TemplateIcon,
+  //   to: '/blog'
+  // },
   
   // { divider: true },
   // { header: 'Utilities' },

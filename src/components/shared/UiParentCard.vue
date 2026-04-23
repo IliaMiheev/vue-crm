@@ -22,7 +22,7 @@ const props = defineProps({
           <v-btn v-if="props.createFn!==undefined" 
           @click="props.createFn" color="primary" variant="outlined">
           <template v-slot:prepend> <v-icon icon="$new" size="x-large"></v-icon></template> 
-          New
+          Добавить
           </v-btn>
         </slot>
       </div>

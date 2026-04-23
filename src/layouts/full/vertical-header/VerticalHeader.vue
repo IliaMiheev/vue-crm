@@ -66,20 +66,18 @@ function gotoGitHub() {
     <!-- Notification -->
     <!-- ---------------------------------------------- -->
 
-    <v-icon icon="$github" @click="gotoGitHub" />
+<!--    <v-menu :close-on-content-click="false">-->
+<!--      <template v-slot:activator="{ props }">-->
 
-    <v-menu :close-on-content-click="false">
-      <template v-slot:activator="{ props }">
-
-        <v-btn icon class="text-secondary mx-3" color="lightsecondary" rounded="sm" size="small" variant="flat"
-          v-bind="props">
-          <BellIcon stroke-width="1.5" size="22" />
-        </v-btn>
-      </template>
-      <v-sheet rounded="md" width="330" elevation="12">
-        <NotificationDD />
-      </v-sheet>
-    </v-menu>
+<!--        <v-btn icon class="text-secondary mx-3" color="lightsecondary" rounded="sm" size="small" variant="flat"-->
+<!--          v-bind="props">-->
+<!--          <BellIcon stroke-width="1.5" size="22" />-->
+<!--        </v-btn>-->
+<!--      </template>-->
+<!--      <v-sheet rounded="md" width="330" elevation="12">-->
+<!--        <NotificationDD />-->
+<!--      </v-sheet>-->
+<!--    </v-menu>-->
 
     <!-- ---------------------------------------------- -->
     <!-- User Profile -->

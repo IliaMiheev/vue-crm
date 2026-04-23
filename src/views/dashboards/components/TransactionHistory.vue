@@ -9,7 +9,7 @@ import { SettingOutlined, GiftOutlined, MessageOutlined } from '@ant-design/icon
 const transaction = shallowRef([
   {
     icon: GiftOutlined,
-    subtitle: 'Today, 2:00 AM',
+    subtitle: 'Сегодня, 2:00 AM',
     title: 'Order #002434',
     color: 'success',
     price: '+ $1,430',

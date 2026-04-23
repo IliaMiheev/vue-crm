@@ -14,8 +14,8 @@ import UiParentCard from '@/components/shared/UiParentCard.vue';
 </script>
 
 <template>
-  <UiMainContainer>
-    <UiParentCard title="Dashboard">
+<!--  <UiMainContainer>-->
+    <UiParentCard title="Дашборд">
       <v-row>
         <!-- -------------------------------------------------------------------- -->
         <!-- Total Earning -->
@@ -53,20 +53,7 @@ import UiParentCard from '@/components/shared/UiParentCard.vue';
         <!-- -------------------------------------------------------------------- -->
         <!-- Widgets -->
         <!-- -------------------------------------------------------------------- -->
-
-        <v-col cols="12" lg="12">
-          <WidgetFive />
-
-        </v-col>
-
-        <v-col cols="12" lg="4">
-          <TransactionHistory class="pa-2" />
-          <AnalyticsReport class="pa-2" />
-        </v-col>
-        <v-col cols="12" lg="8">
-          <UniqueVisitor />
-        </v-col>
       </v-row>
     </UiParentCard>
-  </UiMainContainer>
+<!--  </UiMainContainer>-->
 </template>
