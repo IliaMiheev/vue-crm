@@ -4,9 +4,7 @@ import { useCustomizerStore } from '@/stores/customizer';
 
 const customizer = useCustomizerStore();
 
-// themes font Family options
 const fontFamily = ref(['Roboto', 'Poppins', 'Inter']);
-// themes font Family options
 
 function clearoptions() {
   customizer.inputBg = false;

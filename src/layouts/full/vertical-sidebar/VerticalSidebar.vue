@@ -2,7 +2,6 @@
 import { shallowRef } from 'vue';
 import { useCustomizerStore } from '../../../stores/customizer';
 import sidebarItems from './sidebarItem';
-
 import NavGroup from './NavGroup/NavGroup.vue';
 import NavItem from './NavItem/NavItem.vue';
 import NavCollapse from './NavCollapse/NavCollapse.vue';
@@ -24,29 +23,16 @@ const sidebarMenu = shallowRef(sidebarItems);
     :rail="customizer.mini_sidebar"
     expand-on-hover
   >
-    <!---Logo part -->
-
     <div class="pa-5">
       <Logo :miniSidebar="customizer.mini_sidebar" />
     </div>
-    <!-- ---------------------------------------------- -->
-    <!---Navigation -->
-    <!-- ---------------------------------------------- -->
-    <!-- <perfect-scrollbar class="scrollnavbar"> -->
-      <v-list class="pa-4">
-        <!---Menu Loop -->
-        <template v-for="(item, i) in sidebarMenu" :key="i">
-          <!---Item Sub Header -->
-          <NavGroup :item="item" v-if="item.header" :key="item.title" />
-          <!---Item Divider -->
-          <v-divider class="my-3" v-else-if="item.divider" />
-          <!---If Has Child -->
-          <NavCollapse class="leftPadding" :item="item" :level="0" v-else-if="item.children" />
-          <!---Single Item-->
-          <NavItem :item="item" v-else class="leftPadding" />
-          <!---End Single Item-->
-        </template>
-      </v-list>
-    <!-- </perfect-scrollbar> -->
+    <v-list class="pa-4">
+      <template v-for="(item, i) in sidebarMenu" :key="i">
+        <NavGroup :item="item" v-if="item.header" :key="item.title" />
+        <v-divider class="my-3" v-else-if="item.divider" />
+        <NavCollapse class="leftPadding" :item="item" :level="0" v-else-if="item.children" />
+        <NavItem :item="item" v-else class="leftPadding" />
+      </template>
+    </v-list>
   </v-navigation-drawer>
 </template>

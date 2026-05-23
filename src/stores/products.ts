@@ -39,7 +39,7 @@ export const useProductsStore = defineStore("Products", {
       this.products = list
       this.loading = false;
     },
-    async delteProduct(id: string) {
+    async deleteProduct(id: string) {
       const res = await fetchWrapper.delete(`${baseUrl}/${id}`)
       if (res.error) {
         console.log(res.error)

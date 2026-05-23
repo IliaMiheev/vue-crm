@@ -51,7 +51,6 @@ const chartOptions1 = computed(() => {
     };
 });
 
-// chart 1
 const lineChart1 = {
     series: [
         {
@@ -61,7 +60,6 @@ const lineChart1 = {
     ]
 };
 
-// chart 2
 const chartOptions2 = computed(() => {
     return {
         chart: {
@@ -109,7 +107,6 @@ const chartOptions2 = computed(() => {
     };
 });
 
-// chart 1
 const lineChart2 = {
     series: [
         {
@@ -137,18 +134,14 @@ const lineChart2 = {
             <v-tabs-window v-model="tab" class="z-1">
                 <v-tabs-window-item value="1">
                     <v-row>
-                        <!--            <v-col cols="6">-->
                         <h2 class="text-h1 font-weight-medium">
-                            . 108.00руб
+                            108.00 руб
                             <a href="#">
                                 <CircleArrowDownLeftIcon stroke-width="1.5" width="28" class="text-white" />
                             </a>
                         </h2>
                         <span class="text-subtitle-1 text-medium-emphasis text-white pl-5">Итого заказов</span>
-                        <!--            </v-col>-->
-                        <!--            <v-col cols="6">-->
                         <apexchart type="line" height="90" :options="chartOptions1" :series="lineChart1.series"> </apexchart>
-                        <!--            </v-col>-->
                     </v-row>
                 </v-tabs-window-item>
                 <v-tabs-window-item value="2">

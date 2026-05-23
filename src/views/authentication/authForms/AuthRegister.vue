@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Google from '@/assets/images/auth/social-google.svg';
 import { useAuthStore } from '@/stores/auth';
+
 const checkbox = ref(true);
 const show1 = ref(false);
 const password = ref('password');
@@ -18,23 +18,12 @@ const emailRules = ref([(v: string) => !!v || 'E-mail is required', (v: string) 
 function validate() {
   Regform.value.validate();
   const authStore = useAuthStore();
-  return authStore.register(email.value, password.value)//.catch((error) => setErrors({ apiError: error }));
+  return authStore.register(email.value, password.value);
 }
 </script>
 
 <template>
-<!--  <v-btn block color="primary" variant="outlined" class="text-lightText googleBtn">-->
-<!--    <img :src="Google" alt="google" />-->
-<!--    <span class="ml-2">Sign up with Google</span></v-btn-->
-<!--  <v-row>-->
-<!--    <v-col class="d-flex align-center">-->
-<!--      <v-divider class="custom-devider" />-->
-<!--      <v-btn variant="outlined" class="orbtn" rounded="md" size="small">OR</v-btn>-->
-<!--      <v-divider class="custom-devider" />-->
-<!--    </v-col>-->
-<!--  </v-row>-->
-<!--  <h5 class="text-h5 text-center my-4 mb-8">Sign up with Email address</h5>-->
-  <v-form ref="Regform"   action="/dashboard" class="mt-7 loginForm">
+  <v-form ref="Regform" action="/dashboard" class="mt-7 loginForm">
     <v-row>
       <v-col cols="12" sm="6">
         <v-text-field
@@ -95,30 +84,15 @@ function validate() {
       ></v-checkbox>
       <a href="#" class="ml-1 text-lightText">Правилами сервиса?</a>
     </div>
-    <v-btn color="secondary" block class="mt-2" variant="flat" size="large" @click="validate()">Войти</v-btn>
+    <v-btn color="secondary" block class="mt-2" variant="flat" size="large" @click="validate()">Зарегистрироваться</v-btn>
   </v-form>
   <div class="mt-5 text-right">
     <v-divider />
     <v-btn variant="plain" to="/login" class="mt-2 text-capitalize mr-n2" type="submit">Уже есть аккаунт?</v-btn>
   </div>
 </template>
+
 <style lang="scss">
-.custom-devider {
-  border-color: rgba(0, 0, 0, 0.08) !important;
-}
-.googleBtn {
-  border-color: rgba(0, 0, 0, 0.08);
-  margin: 30px 0 20px 0;
-}
-.outlinedInput .v-field {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: none;
-}
-.orbtn {
-  padding: 2px 40px;
-  border-color: rgba(0, 0, 0, 0.08);
-  margin: 20px 15px;
-}
 .pwdInput {
   position: relative;
   .v-input__append {

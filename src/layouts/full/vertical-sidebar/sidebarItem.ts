@@ -1,20 +1,8 @@
 import {
-  CircleIcon,
-  WindmillIcon,
-  TypographyIcon,
-  ShadowIcon,
-  PaletteIcon,
-  KeyIcon,
-  BugIcon,
   DashboardIcon,
-  BrandChromeIcon,
-Stack3Icon,
+  Stack3Icon,
   UsersIcon,
-  HelpIcon,
-  TruckDeliveryIcon,
-  ArticleIcon,
-  TemplateIcon,
-  UserDollarIcon
+  TruckDeliveryIcon
 } from 'vue-tabler-icons';
 
 export interface menu {
@@ -54,51 +42,7 @@ const sidebarItem: menu[] = [
     title: 'Заказы',
     icon: TruckDeliveryIcon,
     to: '/order'
-  },
-  // { divider: true },
-  // { header: 'Маркетинг' }
-  // ,
-  // {
-  //   title: 'Блог',
-  //   icon: TemplateIcon,
-  //   to: '/blog'
-  // },
-  
-  // { divider: true },
-  // { header: 'Utilities' },
-  // {
-  //   title: 'Typography',
-  //   icon: TypographyIcon,
-  //   to: '/utils/typography'
-  // },
-  // {
-  //   title: 'Shadows',
-  //   icon: ShadowIcon,
-  //   to: '/utils/shadows'
-  // },
-  // {
-  //   title: 'Colors',
-  //   icon: PaletteIcon,
-  //   to: '/utils/colors'
-  // },
-
-  // {
-  //   title: 'Icons',
-  //   icon: WindmillIcon,
-  //   to: '/forms/radio',
-  //   children: [
-  //     {
-  //       title: 'Tabler Icons',
-  //       icon: CircleIcon,
-  //       to: '/icons/tabler'
-  //     },
-  //     {
-  //       title: 'Material Icons',
-  //       icon: CircleIcon,
-  //       to: '/icons/material'
-  //     }
-  //   ]
-  // }
+  }
 ];
 
 export default sidebarItem;

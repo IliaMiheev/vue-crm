@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
-// import icons
 import { ChevronUpIcon, ChevronDownIcon } from 'vue-tabler-icons';
 
-// chart 1
 const chartOptions1 = computed(() => {
   return {
     chart: {
@@ -44,7 +42,6 @@ const chartOptions1 = computed(() => {
   };
 });
 
-// chart 1
 const lineChart1 = {
   series: [
     {
@@ -125,7 +122,6 @@ const revenues = ref([
           <apexchart type="area" height="95" :options="chartOptions1" :series="lineChart1.series"> </apexchart>
         </v-card>
         <div class="mt-4">
-          <!-- <perfect-scrollbar v-bind:style="{ height: '270px'}" > -->
           <v-list lines="two" class="py-0">
             <v-list-item v-for="(revenue, i) in revenues" :key="i" :value="revenue" color="secondary" rounded="sm">
               <template v-slot:append>
@@ -153,7 +149,6 @@ const revenues = ref([
               </div>
             </v-list-item>
           </v-list>
-          <!-- </perfect-scrollbar> -->
 
           <div class="text-center mt-3">
             <v-btn color="primary" variant="text"

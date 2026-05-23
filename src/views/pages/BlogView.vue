@@ -27,7 +27,7 @@ function deleteBlog(id: string) {
 
 function onConfirm() {
   if (selectedId.value) {
-    blogStore.delteBlog(selectedId.value)
+    blogStore.deleteBlog(selectedId.value)
       .then((res) => {
         dialog.value = false
         if (res.status) {

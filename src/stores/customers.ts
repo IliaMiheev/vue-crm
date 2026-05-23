@@ -26,7 +26,7 @@ export const useCustomersStore = defineStore("Customers", {
       this.customers = await fetchWrapper.get(baseUrl)
       this.loading = false;
     },
-    async delteCustomer(id: string) {
+    async deleteCustomer(id: string) {
       const res = await fetchWrapper.delete(`${baseUrl}/${id}`)
       if (res.error) {
         console.log(res.error)

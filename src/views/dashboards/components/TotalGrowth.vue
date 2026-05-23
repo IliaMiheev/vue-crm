@@ -8,7 +8,6 @@ const items = [
     { state: 'В этом году', abbr: 'NE' }
 ];
 
-// chart 1
 const chartOptions1 = computed(() => {
     return {
         chart: {
@@ -74,7 +73,6 @@ const chartOptions1 = computed(() => {
     };
 });
 
-// chart 1
 const lineChart1 = {
     series: [
         {

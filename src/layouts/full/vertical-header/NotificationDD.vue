@@ -7,9 +7,6 @@ const selectNotify = ref<string>('All Notifications');
 </script>
 
 <template>
-  <!-- ---------------------------------------------- -->
-  <!-- notifications DD -->
-  <!-- ---------------------------------------------- -->
   <div class="pa-4">
     <div class="d-flex align-center justify-space-between mb-3">
       <h6 class="text-subtitle-1">
@@ -21,9 +18,8 @@ const selectNotify = ref<string>('All Notifications');
     <v-select :items="notificationDD" v-model="selectNotify" color="primary" variant="outlined" density="default" hide-details></v-select>
   </div>
   <v-divider></v-divider>
-  <!-- <perfect-scrollbar style="height: calc(100vh - 300px); max-height: 650px;"> -->
 
-    <v-list class="py-0" lines="three">
+  <v-list class="py-0" lines="three">
       <v-list-item value="" color="secondary" class="no-spacer">
         <template v-slot:prepend>
           <v-avatar size="40" class="mr-3 py-2">
@@ -116,8 +112,7 @@ const selectNotify = ref<string>('All Notifications');
         <p class="text-subtitle-2 mt-1 text-medium-emphasis mb-3">It is a long established fact that a reader will be distracted</p>
         <v-chip size="small" color="success" text="Confirmation of Account." />
       </v-list-item>
-    </v-list>
-  <!-- </perfect-scrollbar> -->
+  </v-list>
   <v-divider></v-divider>
   <div class="pa-2 text-center">
     <v-btn color="primary" variant="text">View All</v-btn>

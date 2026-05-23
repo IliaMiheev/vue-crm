@@ -37,7 +37,7 @@ export const useBlogsStore = defineStore("Blogs", {
       this.blogs = await fetchWrapper.get(baseUrl)
       this.loading = false;
     },
-    async delteBlog(id: string) {
+    async deleteBlog(id: string) {
       const res = await fetchWrapper.delete(`${baseUrl}/${id}`)
       if (res.error) {
         console.log(res.error)

@@ -30,7 +30,7 @@ export const useOrdersStore = defineStore("Orders", {
       this.orders = await fetchWrapper.get(baseUrl)
       this.loading = false;
     },
-    async delteOrder(id: string) {
+    async deleteOrder(id: string) {
       const res = await fetchWrapper.delete(`${baseUrl}/${id}`)
       if (res.error) {
         console.log(res.error)
