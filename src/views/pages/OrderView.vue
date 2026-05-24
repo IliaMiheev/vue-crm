@@ -7,6 +7,7 @@ import ConfirmDialog from '@/components/shared/ConfirmDialog.vue';
 import NotificationBar from '@/components/shared/NotificeBar.vue';
 import { router } from '@/router';
 import { toTitleCase } from '@/utils/locales/format';
+import { isApiSuccess } from '@/utils/helpers/route-params';
 
 const headers = [
   { title: '№ ссылки', key: 'reference', algin: 'start' },
@@ -25,6 +26,10 @@ const search = ref('');
 const notice = ref(false);
 const selectedId = ref('');
 
+function onCreate() {
+  router.replace({ path: '/order/new' });
+}
+
 function editOrder(id: string) {
   router.replace({ path: `/order/${id}` });
 }
@@ -40,7 +45,7 @@ function onConfirm() {
       .deleteOrder(selectedId.value)
       .then((res) => {
         dialog.value = false;
-        if (res.status) {
+        if (isApiSuccess(res)) {
           notice.value = true;
           setTimeout(() => {
             notice.value = false;
@@ -77,7 +82,7 @@ function getColor(deliveryStatus: string): string {
 </script>
 
 <template>
-  <UiParentCard title="Заказы">
+  <UiParentCard title="Заказы" :createFn="onCreate">
     <div v-if="orderStore.loading">
       <v-progress-linear color="secondary" height="6" indeterminate rounded></v-progress-linear>
     </div>

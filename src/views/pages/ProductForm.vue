@@ -2,9 +2,12 @@
 import UiMainContainer from '@/components/shared/UiMainContainer.vue';
 import UiParentCard from '@/components/shared/UiParentCard.vue';
 import { useProductsStore } from '@/stores/products';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
+import type { Product } from '@/types';
+import { isApiSuccess, isCreateRoute, routeEntityId } from '@/utils/helpers/route-params';
+import { PhotoIcon } from 'vue-tabler-icons';
 
 const AVATAR_PLACEHOLDER = '/src/assets/images/product/product-0.webp';
 
@@ -16,15 +19,20 @@ const loading = ref(false);
 const form = ref();
 const productStore = useProductsStore();
 
-if (route.params['id']) {
-    title.value = 'Изменить информацию о товаре';
-    productStore.getProductById(route.params['id'] as any);
-} else {
+if (isCreateRoute(route.params.id)) {
     title.value = 'Новый товар';
     productStore.newProduct();
+} else {
+    title.value = 'Изменить информацию о товаре';
+    productStore.getProductById(routeEntityId(route.params.id));
 }
 
 const { product } = storeToRefs(productStore);
+
+const imageFile = ref<File[]>([]);
+const imageError = ref('');
+
+const previewImage = computed(() => product.value.imageUri || AVATAR_PLACEHOLDER);
 
 const requiredRule = (value: any) => (value ? true : 'Эти поля обязательны для заполнения');
 const postiveNumberRule = (value: any) => (value > 0 ? true : 'Это число должно быть больше чем ноль');
@@ -38,9 +46,46 @@ const emailRules = [
     }
 ];
 
+const MAX_IMAGE_SIZE_MB = 2;
+
 function onCancel() {
     if (productStore.product) productStore.product = {} as any;
     router.replace({ path: `/product` });
+}
+
+function onImageSelected(files: File | File[] | null) {
+    imageError.value = '';
+    if (!files || (Array.isArray(files) && !files.length)) return;
+
+    const file = Array.isArray(files) ? files[0] : files;
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+        imageError.value = 'Выберите файл изображения (JPG, PNG, WebP и т.д.)';
+        imageFile.value = [];
+        return;
+    }
+
+    if (file.size > MAX_IMAGE_SIZE_MB * 1024 * 1024) {
+        imageError.value = `Размер файла не должен превышать ${MAX_IMAGE_SIZE_MB} МБ`;
+        imageFile.value = [];
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+        product.value.imageUri = String(reader.result);
+    };
+    reader.onerror = () => {
+        imageError.value = 'Не удалось прочитать файл';
+    };
+    reader.readAsDataURL(file);
+}
+
+function removeImage() {
+    imageFile.value = [];
+    imageError.value = '';
+    product.value.imageUri = '';
 }
 
 async function submit(event: any) {
@@ -50,9 +95,20 @@ async function submit(event: any) {
 
     if (valid) {
         loading.value = true;
-        const results: any = await productStore.saveProduct(product.value);
+        const payload: Product = {
+            ...product.value,
+            price: Number(product.value.price),
+            unitInStock: String(product.value.unitInStock)
+        };
+        if (!payload.imageUri) {
+            payload.imageUri = AVATAR_PLACEHOLDER;
+        }
+        if (!payload.colors?.length) {
+            payload.colors = ['#1890FF'] as unknown as [];
+        }
+        const results = await productStore.saveProduct(payload);
 
-        if (results.status) {
+        if (isApiSuccess(results)) {
             router.replace({ path: '/product' });
         }
         loading.value = false;
@@ -68,8 +124,44 @@ async function submit(event: any) {
                     <v-container>
                         <v-row justify="start">
                             <v-col cols="12" md="4">
-                                <v-img size="500" alt="Avatar" v-if="product.imageUri" :src="product.imageUri"></v-img>
-                                <v-img alt="Avatar" v-if="!product.imageUri" :src="AVATAR_PLACEHOLDER"></v-img>
+                                <v-card variant="outlined" class="pa-4">
+                                    <v-img
+                                        :src="previewImage"
+                                        alt="Фото товара"
+                                        max-height="280"
+                                        cover
+                                        class="rounded-lg mb-4"
+                                    />
+                                    <v-file-input
+                                        v-model="imageFile"
+                                        label="Загрузить фото"
+                                        accept="image/*"
+                                        variant="solo-filled"
+                                        show-size
+                                        clearable
+                                        hide-details="auto"
+                                        @update:model-value="onImageSelected"
+                                        @click:clear="removeImage"
+                                    >
+                                        <template #prepend-inner>
+                                            <PhotoIcon size="20" stroke-width="1.5" class="mr-1" />
+                                        </template>
+                                    </v-file-input>
+                                    <p v-if="imageError" class="text-error text-caption mt-2 mb-0">{{ imageError }}</p>
+                                    <p v-else class="text-caption text-medium-emphasis mt-2 mb-0">
+                                        JPG, PNG или WebP, до {{ MAX_IMAGE_SIZE_MB }} МБ
+                                    </p>
+                                    <v-btn
+                                        v-if="product.imageUri"
+                                        class="mt-2"
+                                        variant="text"
+                                        color="error"
+                                        size="small"
+                                        @click="removeImage"
+                                    >
+                                        Удалить фото
+                                    </v-btn>
+                                </v-card>
                             </v-col>
                         </v-row>
                         <v-row>
@@ -97,6 +189,7 @@ async function submit(event: any) {
 
                             <v-col cols="12" md="4">
                                 <v-text-field
+                                    type="number"
                                     v-model="product.price"
                                     :rules="[requiredRule, postiveNumberRule]"
                                     label="Цена за единицу"
@@ -107,10 +200,10 @@ async function submit(event: any) {
 
                             <v-col cols="12" md="4">
                                 <v-text-field
+                                    type="number"
                                     v-model="product.retailPrice"
                                     :rules="[requiredRule]"
                                     label="Розничная цена"
-                                    disabled
                                     variant="solo-filled"
                                     required
                                 ></v-text-field>

@@ -5,6 +5,7 @@ import { useCustomersStore } from '@/stores/customers';
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
+import { isApiSuccess, isCreateRoute, routeEntityId } from '@/utils/helpers/route-params';
 
 const AVATAR_PLACEHOLDER = '/src/assets/images/customer/avatar-0.webp';
 
@@ -16,12 +17,12 @@ const loading = ref(false);
 const form = ref();
 const customerStore = useCustomersStore();
 
-if (route.params['id']) {
-    title.value = 'Изменить данные покупателя';
-    customerStore.getCustomerById(route.params['id'] as any);
-} else {
+if (isCreateRoute(route.params.id)) {
     title.value = 'Новый покупатель';
     customerStore.newCustomer();
+} else {
+    title.value = 'Изменить данные покупателя';
+    customerStore.getCustomerById(routeEntityId(route.params.id));
 }
 
 const { customer } = storeToRefs(customerStore);
@@ -29,14 +30,14 @@ const { customer } = storeToRefs(customerStore);
 const requiredRule = (value: any) => (value ? true : 'Это поле обязательно');
 const nameRules = [
     requiredRule,
-    (value: any) => (value?.length <= 20 ? true : 'Имя должно содержать не более 10 символов.\n' + '\n' + '\n')
+    (value: any) => (value?.length <= 20 ? true : 'Не более 20 символов')
 ];
 const emailRules = [
     requiredRule,
     (value: any) => {
         if (/.+@.+\..+/.test(value)) return true;
 
-        return 'E-mail must be valid.';
+        return 'Некорректный адрес почты';
     }
 ];
 
@@ -52,10 +53,13 @@ async function submit(event: any) {
 
     if (valid) {
         loading.value = true;
-        const results: any = await customerStore.saveCustomer(customer.value);
-        console.log(results);
+        customer.value.fullname = `${customer.value.firstname} ${customer.value.lastname}`.trim();
+        if (!customer.value.avatar) {
+            customer.value.avatar = AVATAR_PLACEHOLDER;
+        }
+        const results = await customerStore.saveCustomer(customer.value);
 
-        if (results.status) {
+        if (isApiSuccess(results)) {
             router.replace({ path: '/customer' });
         }
         loading.value = false;

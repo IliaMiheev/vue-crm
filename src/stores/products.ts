@@ -18,18 +18,20 @@ export const useProductsStore = defineStore("Products", {
     product: {} as Product
   }),
   getters: {
+    filteredList(): Product[] {
+      return this.products.filter((p) =>
+        !this.filter ? true : p.name.toLowerCase().includes(this.filter.toLowerCase())
+      );
+    },
     filteredData(state): Product[] {
-      const filtered = this.products.filter(p =>
-        !this.filter ? true : p.name.toLowerCase().indexOf(this.filter.toLowerCase()) > -1);
-      const paginated = filtered.slice((state.currentPage - 1) * this.pageSize, state.currentPage * this.pageSize)
-      return paginated
-
+      const filtered = this.filteredList;
+      return filtered.slice((state.currentPage - 1) * this.pageSize, state.currentPage * this.pageSize);
     },
     totalPages(): number {
-      return Math.ceil(this.products.length / this.pageSize);
+      return Math.max(1, Math.ceil(this.filteredList.length / this.pageSize));
     },
     totalCount(): number {
-      return this.products.length
+      return this.filteredList.length;
     }
   },
   actions: {
@@ -76,7 +78,8 @@ export const useProductsStore = defineStore("Products", {
           retailPrice: 0,
           // category: Category,
           imageUri: '',
-          releaseDate: ''
+          releaseDate: '',
+          colors: ['#1890FF'] as unknown as []
         }
         this.loading = false
       }

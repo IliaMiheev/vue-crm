@@ -1,16 +1,17 @@
 import { defineStore } from 'pinia';
-
 import { fetchWrapper } from '@/utils/helpers/fetch-wrapper';
-import { ThreedCubeSphereIcon } from 'vue-tabler-icons';
 import type { Address, Order } from '@/types';
 
 const baseUrl = `${import.meta.env.VITE_API_URL}/orders`;
+const DELIVERY_STEPS = ['packing', 'shipping', 'customs-clearance', 'delivered'];
 
+function todayIso(): string {
+  return new Date().toISOString().slice(0, 10);
+}
 
-export const useOrdersStore = defineStore("Orders", {
-
+export const useOrdersStore = defineStore('Orders', {
   state: () => ({
-    orders: [] as Array<Order>,
+    orders: [] as Order[],
     loading: false,
     filter: '',
     order: {} as Order
@@ -20,55 +21,56 @@ export const useOrdersStore = defineStore("Orders", {
       return this.orders;
     },
     getStepVal(): string {
-      return (['packing','shipping','customs-clearance','delivered']
-        .findIndex(s=> s===this.order.delivery)+1).toString()
+      const idx = DELIVERY_STEPS.findIndex((s) => s === this.order.delivery);
+      return String(idx >= 0 ? idx + 1 : 1);
     }
   },
   actions: {
     async getAll() {
       this.loading = true;
-      this.orders = await fetchWrapper.get(baseUrl)
+      this.orders = await fetchWrapper.get(baseUrl);
       this.loading = false;
     },
     async deleteOrder(id: string) {
-      const res = await fetchWrapper.delete(`${baseUrl}/${id}`)
+      const res = await fetchWrapper.delete(`${baseUrl}/${id}`);
       if (res.error) {
-        console.log(res.error)
+        console.log(res.error);
       }
-      return res
+      return res;
     },
     async getOrderById(id: string) {
-      this.loading = true
-      const c = await fetchWrapper.get(`${baseUrl}/${id}`)
-      this.order = c
-      this.loading = false
+      this.loading = true;
+      this.order = await fetchWrapper.get(`${baseUrl}/${id}`);
+      if (!this.order.shippingAddress) {
+        this.order.shippingAddress = { street: '', city: '', country: '', zipcode: '' };
+      }
+      this.loading = false;
     },
     async saveOrder(order: Order) {
-      let res
-      if (order.id)
-        res = await fetchWrapper.put(`${baseUrl}/${order.id}`, order)
-      else
-        res = await fetchWrapper.post(`${baseUrl}`, order)
-      return res
-    },
-    async newOrder() {
-      this.loading = true
-      setTimeout(() => {
-        this.order = {
-          id: '',
-          reference: '',
-          customer: '',
-          lineItems: [],
-          amount: 0,
-          billingDate: '',
-          shippingDate: '',
-          shippingAddress: {} as Address,
-          delivery: '',
-        }
-        this.loading = false
+      if (order.id) {
+        return fetchWrapper.put(`${baseUrl}/${order.id}`, order);
       }
-        , 500)
-
+      return fetchWrapper.post(`${baseUrl}`, order);
+    },
+    newOrder() {
+      this.loading = true;
+      this.order = {
+        id: '',
+        reference: `ORD-${Date.now()}`,
+        customer: '',
+        lineItems: [],
+        amount: 0,
+        billingDate: todayIso(),
+        shippingDate: todayIso(),
+        shippingAddress: {
+          street: '',
+          city: '',
+          country: '',
+          zipcode: ''
+        } as Address,
+        delivery: 'packing'
+      };
+      this.loading = false;
     }
   }
 });

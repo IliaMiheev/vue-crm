@@ -6,6 +6,7 @@ import ConfirmDialog from '@/components/shared/ConfirmDialog.vue';
 import NotificationBar from '@/components/shared/NotificeBar.vue';
 import { router } from '@/router';
 import { ref } from 'vue';
+import { isApiSuccess } from '@/utils/helpers/route-params';
 
 const productStore = useProductsStore();
 productStore.getAll();
@@ -29,7 +30,7 @@ function onConfirm() {
       .deleteProduct(selectedId.value)
       .then((res) => {
         dialog.value = false;
-        if (res.status) {
+        if (isApiSuccess(res)) {
           notice.value = true;
           setTimeout(() => {
             notice.value = false;

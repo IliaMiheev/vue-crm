@@ -23,13 +23,13 @@ const MainRoutes = {
       component: () => import('@/views/pages/CustomerView.vue')
     },
     {
-      name: 'Edit Customer',
-      path: '/customer/:id',
+      name: 'New Customer',
+      path: '/customer/new',
       component: () => import('@/views/pages/CustomerForm.vue')
     },
     {
-      name: 'New Customer',
-      path: '/customer/new',
+      name: 'Edit Customer',
+      path: '/customer/:id',
       component: () => import('@/views/pages/CustomerForm.vue')
     },
     {
@@ -38,13 +38,13 @@ const MainRoutes = {
       component: () => import('@/views/pages/ProductView.vue')
     },
     {
-      name: 'Edit Product',
-      path: '/product/:id',
+      name: 'New Product',
+      path: '/product/new',
       component: () => import('@/views/pages/ProductForm.vue')
     },
     {
-      name: 'New Product',
-      path: '/product/new',
+      name: 'Edit Product',
+      path: '/product/:id',
       component: () => import('@/views/pages/ProductForm.vue')
     },
     {
@@ -53,13 +53,13 @@ const MainRoutes = {
       component: () => import('@/views/pages/OrderView.vue')
     },
     {
-      name: 'Edit Order',
-      path: '/order/:id',
+      name: 'New Order',
+      path: '/order/new',
       component: () => import('@/views/pages/OrderForm.vue')
     },
     {
-      name: 'New Order',
-      path: '/order/new',
+      name: 'Edit Order',
+      path: '/order/:id',
       component: () => import('@/views/pages/OrderForm.vue')
     },
     {

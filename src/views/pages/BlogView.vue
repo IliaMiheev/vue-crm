@@ -5,6 +5,7 @@ import { ref } from "vue";
 import { storeToRefs } from "pinia";
 import ConfirmDialog from "@/components/shared/ConfirmDialog.vue";
 import NotificationBar from "@/components/shared/NotificeBar.vue";
+import { isApiSuccess } from '@/utils/helpers/route-params';
 import { router } from "@/router";
 import { useBlogsStore } from "@/stores/blogs";
 
@@ -30,7 +31,7 @@ function onConfirm() {
     blogStore.deleteBlog(selectedId.value)
       .then((res) => {
         dialog.value = false
-        if (res.status) {
+        if (isApiSuccess(res)) {
           notice.value = true
           setTimeout(() => {
             notice.value = false;

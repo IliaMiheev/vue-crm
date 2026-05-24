@@ -1,5 +1,4 @@
-import { devDB } from './mock.db.dev'
-import db from './mock.db'
+import { loadCrmDatabase, persistCrmDatabase } from './crm-db-storage';
 export { fakeBackend };
 
 
@@ -108,18 +107,9 @@ function persistRegisteredUser(user: AuthUser) {
   }
 }
 
-function loadDevDB() {
-  // console.log(' import.meta.env.API_URL ', import.meta.env.API_URL)
-  if (import.meta.env.DEV 
-      || (import.meta.env.API_URL && import.meta.env.API_URL.startswith("http://localhost"))) {
-    return devDB
-  }
-  return db
-}
-
 function fakeBackend() {
   const users: AuthUser[] = loadUsers();
-  let cache: any = Object.assign({}, loadDevDB());
+  let cache: Record<string, unknown> = loadCrmDatabase();
   const realFetch = window.fetch;
 
   window.fetch = function (url: string, opts: { method: string; headers: { [key: string]: string }; body?: string }) {
@@ -146,6 +136,7 @@ function fakeBackend() {
           case url.lastIndexOf('/customers') > 0 && !url.endsWith('/customers') && opts.method === 'DELETE':
             return deleteDataById('customers',getId(url));
           case url.lastIndexOf('/customers') > 0 && !url.endsWith('/customers') && opts.method === 'PUT':
+            return saveData('customers', getId(url), body());
           //------------------- Product ----------------------
           case url.endsWith('/products') && opts.method === 'GET':
             return getAllData('products');
@@ -219,7 +210,6 @@ function fakeBackend() {
 
         users.push(newUser);
         persistRegisteredUser(newUser);
-        cache = Object.assign({}, loadDevDB());
 
         return ok(toSessionUser(newUser));
       }
@@ -230,7 +220,6 @@ function fakeBackend() {
         const user = users.find((x) => x.username.toLowerCase() === email && x.password === password);
         if (!user) return error('Неверный логин или пароль');
         normalizeUser(user);
-        cache = Object.assign({}, loadDevDB());
         return ok(toSessionUser(user));
       }
 
@@ -239,40 +228,57 @@ function fakeBackend() {
         return ok(users);
       }
 
-      function getAllData(model:string) {
+      function getAllData(model: string) {
         if (!isAuthenticated()) return unauthorized();
-        const customers = cache[model]
-        return ok(customers);
+        const collection = cache[model] as unknown[];
+        return ok(collection);
       }
 
-      function getDataById(model:string, id: string) {
+      function getDataById(model: string, id: string) {
         if (!isAuthenticated()) return unauthorized();
-        const customer = cache[model].find((c: any) => c.id === id)
-        return ok(customer);
+        const collection = cache[model] as { id?: string | number }[];
+        const item = collection.find((c) => String(c.id) === String(id));
+        if (!item) return error('Запись не найдена');
+        return ok(item);
       }
 
-      function deleteDataById(model:string, id: string) {
+      function deleteDataById(model: string, id: string) {
         if (!isAuthenticated()) return unauthorized();
-        const idx = cache[model].findIndex((c: any) => c.id === id)
-        if (idx > -1) cache[model].splice(idx, 1)
-        return ok({ status: '204' } as any);
+        const collection = cache[model] as { id?: string | number }[];
+        const idx = collection.findIndex((c) => String(c.id) === String(id));
+        if (idx === -1) return error('Запись не найдена');
+        collection.splice(idx, 1);
+        persistCrmDatabase(cache);
+        return ok({ status: '204' });
       }
 
-      function saveData(model:string, id: string, data: any) {
+      function nextEntityId(model: string): string {
+        const items = (cache[model] || []) as { id?: string | number }[];
+        const maxId = items.reduce((max, item) => {
+          const numericId = Number(item.id);
+          return Number.isFinite(numericId) ? Math.max(max, numericId) : max;
+        }, 0);
+        return String(maxId + 1);
+      }
+
+      function saveData(model: string, id: string, data: Record<string, unknown>) {
         if (!isAuthenticated()) return unauthorized();
+        const collection = cache[model] as Record<string, unknown>[];
         if (id) {
-          const idx = cache[model].findIndex((c: any) => c.id === id)
-          if (idx > -1) cache[model][idx] = Object.assign({}, data)
+          const idx = collection.findIndex((c) => String(c.id) === String(id));
+          if (idx === -1) return error('Запись не найдена');
+          collection[idx] = Object.assign({}, collection[idx], data, { id: collection[idx].id });
+        } else {
+          const payload = Object.assign({}, data);
+          payload.id = payload.id || nextEntityId(model);
+          collection.push(payload);
         }
-        else {
-          data.id = String(cache[model].length);
-          cache[model][cache[model].length] = Object.assign({}, data)
-        }
-        return ok({ status: '204' } as any);
+        persistCrmDatabase(cache);
+        return ok({ status: '204' });
       }
 
       // helper functions
-      function ok(body: AuthUser[] | ResponseBody): void {
+      function ok(body: unknown): void {
         resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(body)) } as Response);
       }
 

@@ -6,9 +6,10 @@ import { storeToRefs } from 'pinia';
 import ConfirmDialog from '@/components/shared/ConfirmDialog.vue';
 import NotificationBar from '@/components/shared/NotificeBar.vue';
 import { router } from '@/router';
+import { isApiSuccess } from '@/utils/helpers/route-params';
 
 const headers = [
-  { title: '', key: 'Иконка', algin: 'start' },
+  { title: '', key: 'avatar', algin: 'start' },
   { title: 'Имя', key: 'firstname', algin: 'start' },
   { title: 'Фамилия', key: 'lastname', algin: 'start' },
   { title: 'Почта', key: 'email', algin: 'start' },
@@ -42,7 +43,7 @@ function onConfirm() {
       .deleteCustomer(selectedId.value)
       .then((res) => {
         dialog.value = false;
-        if (res.status) {
+        if (isApiSuccess(res)) {
           notice.value = true;
           setTimeout(() => {
             notice.value = false;
