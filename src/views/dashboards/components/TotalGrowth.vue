@@ -66,7 +66,7 @@ const chartOptions = computed(() => ({
     locales: [ruLocale],
     defaultLocale: 'ru'
   },
-  colors: ['#ffc107', '#1e88e5', '#5e35b1', '#00c853'],
+  colors: ['#ffc107', '#5e35b1', '#1e88e5', '#00c853'],
   responsive: [
     {
       breakpoint: 480,

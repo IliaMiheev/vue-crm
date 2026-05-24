@@ -92,7 +92,7 @@ async function submit(event: any) {
                 <v-form ref="form" v-model="valid" @submit.prevent>
                     <v-container>
                         <v-row justify="start">
-                            <v-col cols="12" md="4">
+                            <v-col>
                                 <v-card variant="outlined" class="pa-4">
                                     <v-img
                                         :src="previewImage"
