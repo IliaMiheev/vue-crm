@@ -7,6 +7,7 @@ import ConfirmDialog from '@/components/shared/ConfirmDialog.vue';
 import NotificationBar from '@/components/shared/NotificeBar.vue';
 import { router } from '@/router';
 import { formatDeliveryStatus } from '@/utils/locales/labels';
+import { formatRuShortDate } from '@/utils/locales/format';
 import { isApiSuccess } from '@/utils/helpers/route-params';
 
 const headers = [
@@ -90,6 +91,9 @@ function getColor(deliveryStatus: string): string {
       <v-data-table :headers="headers" :items="filteredData" :search="search" show-expand>
         <template v-slot:top>
           <v-text-field v-model="search" variant="solo-filled" class="pa-2" label="Фильтровать"></v-text-field>
+        </template>
+        <template v-slot:item.shippingDate="{ value }">
+          {{ formatRuShortDate(value) }}
         </template>
         <template v-slot:item.delivery="{ value }">
           <v-chip

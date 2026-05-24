@@ -7,7 +7,7 @@ import { useProductsStore } from '@/stores/products';
 import { computed, onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
-import { formatToCurrencyString } from '@/utils/locales/format';
+import { formatRuShortDate, formatToCurrencyString } from '@/utils/locales/format';
 import { isApiSuccess, isCreateRoute, routeEntityId } from '@/utils/helpers/route-params';
 import type { Product } from '@/types';
 
@@ -141,6 +141,7 @@ async function submitAdvanceStatus(event: Event) {
                   <v-date-input
                     v-model="order.billingDate"
                     :rules="[requiredRule]"
+                    :display-format="formatRuShortDate"
                     label="Дата выставления счёта"
                     variant="solo-filled"
                     prepend-icon=""
@@ -151,6 +152,7 @@ async function submitAdvanceStatus(event: Event) {
                   <v-date-input
                     v-model="order.shippingDate"
                     :rules="[requiredRule]"
+                    :display-format="formatRuShortDate"
                     label="Дата отгрузки"
                     variant="solo-filled"
                     prepend-icon=""
@@ -287,23 +289,21 @@ async function submitAdvanceStatus(event: Event) {
                   />
                 </v-col>
                 <v-col cols="12" md="4">
-                  <v-date-input
-                    v-model="order.billingDate"
+                  <v-text-field
+                    :model-value="formatRuShortDate(order.billingDate)"
                     label="Дата счёта"
                     disabled
                     variant="solo-filled"
-                    prepend-icon=""
-                    prepend-inner-icon="$calendar"
+                    readonly
                   />
                 </v-col>
                 <v-col cols="12" md="4">
-                  <v-date-input
-                    v-model="order.shippingDate"
+                  <v-text-field
+                    :model-value="formatRuShortDate(order.shippingDate)"
                     label="Дата отгрузки"
                     disabled
                     variant="solo-filled"
-                    prepend-icon=""
-                    prepend-inner-icon="$calendar"
+                    readonly
                   />
                 </v-col>
               </v-row>

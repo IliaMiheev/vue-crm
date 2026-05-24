@@ -217,14 +217,7 @@ function selectPeriod(value: string) {
             </v-list-item>
           </v-list>
 
-          <div class="text-center mt-3">
-            <v-btn color="primary" variant="text">
-              Смотреть все
-              <template v-slot:append>
-                <ChevronRightIcon stroke-width="1.5" width="20" />
-              </template>
-            </v-btn>
-          </div>
+
         </div>
       </v-card-text>
     </v-card>

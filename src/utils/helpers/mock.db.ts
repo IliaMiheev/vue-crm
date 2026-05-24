@@ -1,7 +1,7 @@
 export default {
     token: {
         accessToken: 'fake-token-12345789-abcdefgh',
-        user: { firstname: 'Admin', lastname: '', email: 'admin@test.com', password: 'password' }
+        user: { firstname: 'Админ', lastname: 'Системы', email: 'admin@test.com', password: 'password' }
     },
     employees: [
         {
@@ -368,15 +368,15 @@ export default {
     customers: [
         {
             id: '1',
-            fullname: 'Billy Braun',
-            firstname: 'Billy',
-            lastname: 'Braun',
-            email: 'Billy.Stoltenberg@test.com',
-            mobile: '(499) 633-7585',
-            phone: '1-735-980-4850 x822',
-            city: 'Sydney',
-            state: ' NSW',
-            country: ' AU',
+            fullname: 'Алексей Иванов',
+            firstname: 'Алексей',
+            lastname: 'Иванов',
+            email: 'a.ivanov@mail.ru',
+            mobile: '+7 (495) 123-45-68',
+            phone: '+7 (495) 123-45-67',
+            city: 'Москва',
+            state: 'Москва',
+            country: 'Россия',
             hasItemInShoppingCart: true,
             avatar: '/assets/images/customer/avatar-1.png',
             membership: 'standard',
@@ -384,15 +384,15 @@ export default {
         },
         {
             id: '2',
-            fullname: 'Cheryl Romaguera',
-            firstname: 'Cheryl',
-            lastname: 'Romaguera',
-            email: 'Eloise.Ebert@test.com',
-            mobile: '(922) 436-7361 x2235',
-            phone: '1-950-769-6723 x2233',
-            city: 'North Canton',
-            state: ' Ohio',
-            country: ' USA',
+            fullname: 'Мария Петрова',
+            firstname: 'Мария',
+            lastname: 'Петрова',
+            email: 'm.petrova@mail.ru',
+            mobile: '+7 (812) 234-56-79',
+            phone: '+7 (812) 234-56-78',
+            city: 'Санкт-Петербург',
+            state: 'Санкт-Петербург',
+            country: 'Россия',
             hasItemInShoppingCart: false,
             avatar: '/assets/images/customer/avatar-2.png',
             membership: 'vip',
@@ -400,15 +400,15 @@ export default {
         },
         {
             id: '3',
-            fullname: 'Lee Doyle-Grant',
-            firstname: 'Lee',
-            lastname: 'Doyle-Grant',
-            email: 'Teresa.Luettgen@test.com',
-            mobile: '528-376-5760 x97546',
-            phone: '406-912-2464 x0861',
-            city: 'Ottawa',
-            state: ' Ontario',
-            country: ' CA',
+            fullname: 'Ольга Смирнова',
+            firstname: 'Ольга',
+            lastname: 'Смирнова',
+            email: 'o.smirnova@mail.ru',
+            mobile: '+7 (343) 345-67-90',
+            phone: '+7 (343) 345-67-89',
+            city: 'Екатеринбург',
+            state: 'Свердловская область',
+            country: 'Россия',
             hasItemInShoppingCart: false,
             avatar: '/assets/images/customer/avatar-3.png',
             membership: 'vip',
@@ -416,159 +416,143 @@ export default {
         },
         {
             id: '4',
-            fullname: 'Angel Rolfson-Kulas',
-            firstname: 'Angel',
-            lastname: 'Rolfson-Kulas',
-            email: 'Salvador.Mayert@test.com',
-            mobile: '624.509.7392 x1286',
-            phone: '1-226-573-7979 x21253',
-            city: 'Queensland',
-            state: ' NSW',
-            country: ' AU',
+            fullname: 'Дмитрий Козлов',
+            firstname: 'Дмитрий',
+            lastname: 'Козлов',
+            email: 'd.kozlov@mail.ru',
+            mobile: '+7 (383) 456-78-91',
+            phone: '+7 (383) 456-78-90',
+            city: 'Новосибирск',
+            state: 'Новосибирская область',
+            country: 'Россия',
             hasItemInShoppingCart: false,
             avatar: '/assets/images/customer/avatar-4.png',
             membership: 'vip',
             rewards: 45
         },
         {
-            id: '4',
-            fullname: 'Sherri Davis',
-            firstname: 'Sherri',
-            lastname: 'Davis',
-            email: 'Dr..Guadalupe.Rath@test.com',
-            mobile: '848-314-0999 x195',
-            phone: '1-549-588-5177',
-            city: 'Sydney',
-            state: ' NSW',
-            country: ' AU',
+            id: '5',
+            fullname: 'Елена Волкова',
+            firstname: 'Елена',
+            lastname: 'Волкова',
+            email: 'e.volkova@mail.ru',
+            mobile: '+7 (843) 567-89-02',
+            phone: '+7 (843) 567-89-01',
+            city: 'Казань',
+            state: 'Татарстан',
+            country: 'Россия',
             hasItemInShoppingCart: true,
             avatar: '/assets/images/customer/avatar-5.png',
             membership: 'standard',
             rewards: 5
         },
         {
-            id: '5',
-            fullname: 'Tony Paucek PhD',
-            firstname: 'Tony',
-            lastname: 'Paucek',
-            email: 'Kelvin.Pouros@test.com',
-            mobile: '(424) 566-0764',
-            phone: '1-494-294-7001 x164',
-            city: 'Frankfurt',
-            state: ' Frankfurt',
-            country: ' GE',
+            id: '6',
+            fullname: 'Игорь Соколов',
+            firstname: 'Игорь',
+            lastname: 'Соколов',
+            email: 'i.sokolov@mail.ru',
+            mobile: '+7 (351) 678-90-13',
+            phone: '+7 (351) 678-90-12',
+            city: 'Челябинск',
+            state: 'Челябинская область',
+            country: 'Россия',
             hasItemInShoppingCart: false,
             avatar: '/assets/images/customer/avatar-6.png',
             membership: 'vip',
             rewards: 71
         },
         {
-            id: '6',
-            fullname: 'Betty Hammes',
-            firstname: 'Betty',
-            lastname: 'Hammes',
-            email: 'Thelma.Langworth@test.com',
-            mobile: '939.834.8753 x03976',
-            phone: '939.834.8753 x03976',
-            city: 'Milan',
-            state: ' Milan',
-            country: ' IT',
+            id: '7',
+            fullname: 'Наталья Морозова',
+            firstname: 'Наталья',
+            lastname: 'Морозова',
+            email: 'n.morozova@mail.ru',
+            mobile: '+7 (391) 789-01-24',
+            phone: '+7 (391) 789-01-23',
+            city: 'Красноярск',
+            state: 'Красноярский край',
+            country: 'Россия',
             hasItemInShoppingCart: false,
             avatar: '/assets/images/customer/avatar-7.png',
             membership: 'vip',
             rewards: 16
         },
         {
-            id: '7',
-            fullname: 'Kerry Kuhlman',
-            firstname: 'Kerry',
-            lastname: 'Kuhlman',
-            email: 'Kristen.Wunsch@test.com',
-            mobile: '1-494-294-7001 x164',
-            phone: '(424) 566-0764',
-            city: 'Paris',
-            state: ' Paris',
-            country: ' FR',
-            hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-8.png',
-            membership: 'vip',
-            rewards: 30
-        },
-        {
             id: '8',
-            fullname: 'Charlene Krajcik',
-            firstname: 'Charlene',
-            lastname: 'Krajcik',
-            email: 'Steve.Welch@test.com',
-            mobile: '1-549-588-5177',
-            phone: '848-314-0999 x195',
-            city: 'Perth',
-            state: ' WA',
-            country: ' AU',
+            fullname: 'Сергей Новиков',
+            firstname: 'Сергей',
+            lastname: 'Новиков',
+            email: 's.novikov@mail.ru',
+            mobile: '+7 (863) 890-12-35',
+            phone: '+7 (863) 890-12-34',
+            city: 'Ростов-на-Дону',
+            state: 'Ростовская область',
+            country: 'Россия',
             hasItemInShoppingCart: true,
-            avatar: '/assets/images/customer/avatar-9.png',
+            avatar: '/assets/images/customer/avatar-8.png',
             membership: 'standard',
             rewards: 37
         },
         {
             id: '9',
-            fullname: 'Mr. Conrad Spinka',
-            firstname: 'Mr.',
-            lastname: 'Conrad',
-            email: 'Brian.Jacobs@test.com',
-            mobile: '1-226-573-7979 x21253',
-            phone: '624.509.7392 x1286',
-            city: 'Hong Kong',
-            state: ' HK',
-            country: ' CN',
+            fullname: 'Анна Кузнецова',
+            firstname: 'Анна',
+            lastname: 'Кузнецова',
+            email: 'a.kuznetsova@mail.ru',
+            mobile: '+7 (381) 901-23-46',
+            phone: '+7 (381) 901-23-45',
+            city: 'Омск',
+            state: 'Омская область',
+            country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-10.png',
+            avatar: '/assets/images/customer/avatar-9.png',
             membership: 'vip',
             rewards: 201
         },
         {
             id: '10',
-            fullname: 'Lillie Schultz',
-            firstname: 'Lillie',
-            lastname: 'Schultz',
-            email: 'Lillie.Schultz@test.com',
-            mobile: '406-912-2464 x0861',
-            phone: '528-376-5760 x97546',
-            city: 'San Francisco',
-            state: ' California',
-            country: ' USA',
+            fullname: 'Лилия Шульц',
+            firstname: 'Лилия',
+            lastname: 'Шульц',
+            email: 'l.shultz@mail.ru',
+            mobile: '+7 (421) 012-34-57',
+            phone: '+7 (421) 012-34-56',
+            city: 'Хабаровск',
+            state: 'Хабаровский край',
+            country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-11.png',
+            avatar: '/assets/images/customer/avatar-10.png',
             membership: 'vip',
             rewards: 52
         },
         {
             id: '11',
-            fullname: 'Brian Jacobs',
-            firstname: 'Brian',
-            lastname: 'Jacobs',
-            email: 'Mr..Conrad.Spinka@test.com',
-            mobile: '1-950-769-6723 x2233',
-            phone: '(922) 436-7361 x2235',
-            city: 'Toronto',
-            state: ' ON',
-            country: ' CA',
+            fullname: 'Павел Орлов',
+            firstname: 'Павел',
+            lastname: 'Орлов',
+            email: 'p.orlov@mail.ru',
+            mobile: '+7 (473) 123-45-68',
+            phone: '+7 (473) 123-45-67',
+            city: 'Воронеж',
+            state: 'Воронежская область',
+            country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-12.png',
+            avatar: '/assets/images/customer/avatar-11.png',
             membership: 'vip',
             rewards: 78
         },
         {
             id: '12',
-            firstname: 'Billy',
-            lastname: 'Braun',
-            fullname: 'Billy  Braun',
-            email: 'Billy.Stoltenberg@test.com',
-            phone: '1-735-98',
-            mobile: '(499) 6',
-            city: 'Toronto',
-            state: ' ON',
-            country: ' CA',
+            fullname: 'Виктория Белова',
+            firstname: 'Виктория',
+            lastname: 'Белова',
+            email: 'v.belova@mail.ru',
+            mobile: '+7 (845) 234-56-79',
+            phone: '+7 (845) 234-56-78',
+            city: 'Самара',
+            state: 'Самарская область',
+            country: 'Россия',
             hasItemInShoppingCart: false,
             avatar: '/assets/images/customer/avatar-12.png',
             membership: 'vip',
@@ -576,15 +560,19 @@ export default {
         },
         {
             id: '13',
-            firstname: 'Ker',
-            lastname: 'Kuhlm',
-            email: 'Teresa.Luettgen@test.com',
-            rewards: 89,
-            phone: '406-912-2464 x0861',
-            mobile: '13123123',
+            fullname: 'Кирилл Федоров',
+            firstname: 'Кирилл',
+            lastname: 'Федоров',
+            email: 'k.fedorov@mail.ru',
+            mobile: '+7 (495) 555-12-34',
+            phone: '+7 (495) 555-12-33',
+            city: 'Москва',
+            state: 'Москва',
+            country: 'Россия',
+            hasItemInShoppingCart: false,
+            avatar: '/assets/images/customer/avatar-0.webp',
             membership: 'vip',
-            fullname: 'Ker  Kuhlm',
-            avatar: '/assets/images/customer/avatar-0.webp'
+            rewards: 89
         }
     ],
     tasks: [
@@ -929,627 +917,628 @@ export default {
     ],
     orders: [
         {
-            reference: 'ss-2-22-22',
-            amount: 2323,
+            reference: 'ORD-1737500000001',
+            amount: 9780,
             id: '1',
             delivery: 'shipping',
-            customer: 'Lillie Schultz',
+            customer: 'Лилия Шульц',
             lineItems: [
                 {
-                    id: 5,
-                    name: 'Anta Waffle Racer Crater',
-                    category: 'Track and Field',
+                    id: 9,
+                    name: 'Кроссовки Waffle Trail',
+                    category: 'Лёгкая атлетика',
                     status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-15.webp'
+                    price: 4590,
+                    imageUri: '/assets/images/product/product-10.webp'
                 },
                 {
-                    id: 6,
-                    name: 'Li-Ning 7 EP Sisterhood',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 25,
-                    imageUri: '/assets/images/product/product-16.webp'
+                    id: 10,
+                    name: 'Кроссовки Sisterhood Run 7',
+                    category: 'Лёгкая атлетика',
+                    price: 5190,
+                    imageUri: '/assets/images/product/product-11.webp'
                 }
             ],
             billingDate: '2025-08-08',
-            shippingDate: null,
+            shippingDate: '2025-08-08',
             shippingAddress: {
-                street: '19069 Ladarius Circle Apt. 902',
-                streetName: 'Wilderman Glens',
-                buildingNumber: '438',
-                city: 'New Damaris',
-                zipcode: '02807-6352',
-                country: 'India'
+                street: 'ул. Муравьёва-Амурского, д. 28, кв. 45',
+                streetName: 'Центральный',
+                buildingNumber: '28',
+                city: 'Хабаровск',
+                zipcode: '680000',
+                country: 'Россия'
             }
         },
         {
             id: '2',
-            reference: 'order-2-2-1-2',
+            reference: 'ORD-1737500000002',
             lineItems: [
                 {
-                    id: 1,
-                    name: 'Anta Air Force 1 NDESTRUKT',
-                    category: 'Basketball',
-                    price: 18,
-                    imageUri: '/assets/images/product/product-2.webp'
+                    id: 24,
+                    name: 'Кроссовки Classic Force',
+                    category: 'Баскетбол',
+                    status: 'hot',
+                    price: 6990,
+                    imageUri: '/assets/images/product/product-1.webp'
                 },
                 {
                     id: 2,
-                    name: 'Anta Air Force 1 NDESTRUKT',
-                    category: 'Basketball',
-                    price: 19,
-                    imageUri: '/assets/images/product/product-2.webp'
+                    name: 'Кроссовки баскетбольные Court Master',
+                    category: 'Баскетбол',
+                    status: 'hot',
+                    price: 8990,
+                    imageUri: '/assets/images/product/product-3.webp'
                 }
             ],
-            amount: 9.99,
+            amount: 15980,
             billingDate: '2025-01-01',
             shippingDate: '2025-01-01',
             shippingAddress: {
-                street: '4768 Wilkinson Forks Apt. 074',
-                streetName: 'Green Locks',
-                buildingNumber: '70079',
-                city: 'Madilynberg',
-                zipcode: '79476-1773',
-                country: 'Hong Kong SAR China'
+                street: 'ул. Тверская, д. 8, кв. 74',
+                streetName: 'Тверской',
+                buildingNumber: '8',
+                city: 'Москва',
+                zipcode: '125009',
+                country: 'Россия'
             },
             delivery: 'delivered',
-            customer: 'Billy Stoltenberg'
+            customer: 'Алексей Иванов'
         },
         {
             id: '3',
-            reference: 'order-4-3-1-2',
+            reference: 'ORD-1737500000003',
             lineItems: [
                 {
                     id: 1,
-                    name: 'Anta Space Hippie 04',
-                    category: 'Basketball',
-                    price: 18,
-                    imageUri: '/assets/images/product/product-3.webp'
+                    name: 'Кроссовки беговые Stride Pro',
+                    category: 'Бег',
+                    price: 5490,
+                    imageUri: '/assets/images/product/product-2.webp'
                 },
                 {
                     id: 2,
-                    name: 'Anta Space Hippie 04',
-                    category: 'Basketball',
-                    price: 19,
+                    name: 'Кроссовки баскетбольные Court Master',
+                    category: 'Баскетбол',
+                    status: 'hot',
+                    price: 8990,
                     imageUri: '/assets/images/product/product-3.webp'
                 },
                 {
                     id: 3,
-                    name: 'Nike Blazer Low 77 Vintage',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-5.webp'
-                },
-                {
-                    id: 5,
-                    name: 'XTEP ZoomX SuperRep Surge',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-8.webp'
-                }
-            ],
-            amount: 5.99,
-            billingDate: '2025-01-01',
-            shippingDate: '2025-01-01',
-            shippingAddress: {
-                street: '2992 Buster Manor Suite 650',
-                streetName: 'Gino Spurs',
-                buildingNumber: '46418',
-                city: 'East Marguerite',
-                zipcode: '05272',
-                country: 'Malaysia'
-            },
-            delivery: 'packing',
-            customer: 'Eloise Ebert'
-        },
-        {
-            id: '4',
-            reference: 'order-4-4-1-2',
-            lineItems: [
-                {
-                    id: 3,
-                    name: 'XTEP Air Zoom Pegasus 37',
-                    category: 'Backetball',
-                    status: 'hot',
-                    price: 10,
+                    name: 'Кроссовки лёгкие Sprint Classic',
+                    category: 'Лёгкая атлетика',
+                    status: 'new',
+                    price: 4290,
                     imageUri: '/assets/images/product/product-4.webp'
                 },
                 {
                     id: 4,
-                    name: 'XTEP ZoomX SuperRep Surge',
-                    category: 'Track and Field',
+                    name: 'Кроссовки для зала Fit Pulse',
+                    category: 'Фитнес',
                     status: 'hot',
-                    price: 22,
+                    price: 3790,
+                    imageUri: '/assets/images/product/product-5.webp'
+                }
+            ],
+            amount: 22560,
+            billingDate: '2025-01-01',
+            shippingDate: '2025-01-01',
+            shippingAddress: {
+                street: 'Невский проспект, д. 50, кв. 12',
+                streetName: 'Центральный',
+                buildingNumber: '50',
+                city: 'Санкт-Петербург',
+                zipcode: '191025',
+                country: 'Россия'
+            },
+            delivery: 'packing',
+            customer: 'Мария Петрова'
+        },
+        {
+            id: '4',
+            reference: 'ORD-1737500000004',
+            lineItems: [
+                {
+                    id: 3,
+                    name: 'Кроссовки лёгкие Sprint Classic',
+                    category: 'Лёгкая атлетика',
+                    status: 'new',
+                    price: 4290,
                     imageUri: '/assets/images/product/product-4.webp'
                 },
                 {
-                    id: 6,
-                    name: 'Nike Blazer Low 77 Vintage',
-                    category: 'Track and Field',
+                    id: 4,
+                    name: 'Кроссовки для зала Fit Pulse',
+                    category: 'Фитнес',
                     status: 'hot',
-                    price: 21.5,
+                    price: 3790,
                     imageUri: '/assets/images/product/product-5.webp'
+                },
+                {
+                    id: 12,
+                    name: 'Кроссовки Retro Blazer Low',
+                    category: 'Лёгкая атлетика',
+                    price: 6490,
+                    imageUri: '/assets/images/product/product-13.webp'
                 }
             ],
-            amount: 499.99,
+            amount: 14570,
             billingDate: '2025-01-01',
             shippingDate: '2025-01-01',
             shippingAddress: {
-                street: "712 D'Amore Crest",
-                streetName: 'Kennedy Valleys',
-                buildingNumber: '7020',
-                city: 'Hermanside',
-                zipcode: '68941-5125',
-                country: 'Austria'
+                street: 'ул. Малышева, д. 36, оф. 702',
+                streetName: 'Ленинский',
+                buildingNumber: '36',
+                city: 'Екатеринбург',
+                zipcode: '620014',
+                country: 'Россия'
             },
             delivery: 'shipping',
-            customer: 'Teresa Luettgen'
+            customer: 'Ольга Смирнова'
         },
         {
             id: '5',
-            reference: 'order-5-5-1-2',
+            reference: 'ORD-1737500000005',
             lineItems: [
                 {
-                    id: 5,
-                    name: 'Nike Blazer Low 77 Vintage',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-5.webp'
+                    id: 12,
+                    name: 'Кроссовки Retro Blazer Low',
+                    category: 'Лёгкая атлетика',
+                    price: 6490,
+                    imageUri: '/assets/images/product/product-13.webp'
                 },
                 {
-                    id: 5,
-                    name: 'XTEP ZoomX SuperRep Surge',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-8.webp'
+                    id: 13,
+                    name: 'Кроссовки SuperRep Surge',
+                    category: 'Фитнес',
+                    price: 3490,
+                    imageUri: '/assets/images/product/product-14.webp'
                 }
             ],
-            amount: 399.99,
+            amount: 9980,
             billingDate: '2025-01-01',
             shippingDate: '2025-01-01',
             shippingAddress: {
-                street: '9375 Klocko Bypass Suite 770',
-                streetName: 'Reichel Centers',
-                buildingNumber: '1659',
-                city: 'Bernitatown',
-                zipcode: '01947-6332',
-                country: 'Sierra Leone'
+                street: 'ул. Красный проспект, д. 77',
+                streetName: 'Центральный',
+                buildingNumber: '77',
+                city: 'Новосибирск',
+                zipcode: '630007',
+                country: 'Россия'
             },
             delivery: 'customs-clearance',
-            customer: 'Salvador Mayert'
+            customer: 'Дмитрий Козлов'
         },
         {
             id: '8',
-            reference: 'order-8-8-1-2',
+            reference: 'ORD-1737500000008',
             lineItems: [
                 {
-                    id: 5,
-                    name: 'XTEP ZoomX SuperRep Surge',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 21.5,
+                    id: 7,
+                    name: 'Кроссовки Urban Jump High',
+                    category: 'Баскетбол',
+                    status: 'new',
+                    price: 7490,
                     imageUri: '/assets/images/product/product-8.webp'
                 },
                 {
-                    id: 5,
-                    name: 'Jordan Delta',
-                    category: 'Backetball',
-                    status: 'hot',
-                    price: 21.5,
+                    id: 11,
+                    name: 'Баскетбольные Zoom Court',
+                    category: 'Баскетбол',
+                    status: 'new',
+                    price: 5990,
                     imageUri: '/assets/images/product/product-12.webp'
                 }
             ],
-            amount: 89.99,
+            amount: 13480,
             billingDate: '2025-01-12',
             shippingDate: '2025-01-10',
             shippingAddress: {
-                street: '245 Kertzmann Spring',
-                streetName: 'Elmore Groves',
-                buildingNumber: '909',
-                city: 'Napoleontown',
-                zipcode: '33986',
-                country: 'Romania'
+                street: 'ул. Кирова, д. 159, кв. 9',
+                streetName: 'Ленинский',
+                buildingNumber: '159',
+                city: 'Челябинск',
+                zipcode: '454091',
+                country: 'Россия'
             },
             delivery: 'packing',
-            customer: 'Dr. Guadalupe Rath'
+            customer: 'Игорь Соколов'
         },
         {
             id: '9',
-            reference: 'order-9-9-1-2',
+            reference: 'ORD-1737500000009',
             lineItems: [
                 {
                     id: 5,
-                    name: 'Zoom Freak 2',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-9.webp'
+                    name: 'Шиповки Track Elite',
+                    category: 'Лёгкая атлетика',
+                    price: 6290,
+                    imageUri: '/assets/images/product/product-6.webp'
                 },
                 {
-                    id: 5,
-                    name: 'Jordan Delta',
-                    category: 'Backetball',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-12.webp'
+                    id: 7,
+                    name: 'Кроссовки Urban Jump High',
+                    category: 'Баскетбол',
+                    status: 'new',
+                    price: 7490,
+                    imageUri: '/assets/images/product/product-8.webp'
                 }
             ],
-            amount: 59.99,
+            amount: 13780,
             billingDate: '2025-01-01',
             shippingDate: '2025-01-01',
             shippingAddress: {
-                street: '36746 Kertzmann Rest',
-                streetName: 'Feest Field',
+                street: 'пр. Мира, д. 187',
+                streetName: 'Советский',
                 buildingNumber: '187',
-                city: 'North Lisandrochester',
-                zipcode: '33908-9136',
-                country: 'Mali'
+                city: 'Красноярск',
+                zipcode: '660049',
+                country: 'Россия'
             },
             delivery: 'customs-clearance',
-            customer: 'Kelvin Pouros'
+            customer: 'Наталья Морозова'
         },
         {
             id: '10',
-            reference: 'order-10-10-1-2',
+            reference: 'ORD-1737500000010',
             lineItems: [
                 {
-                    id: 5,
-                    name: 'Nike Air Max Zephyr',
-                    category: 'Aerobic Exercise',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-10.webp'
+                    id: 6,
+                    name: 'Кроссовки Air Cushion Max',
+                    category: 'Баскетбол',
+                    price: 9990,
+                    imageUri: '/assets/images/product/product-7.webp'
                 },
                 {
-                    id: 5,
-                    name: 'Jordan Delta',
-                    category: 'Backetball',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-12.webp'
+                    id: 7,
+                    name: 'Кроссовки Urban Jump High',
+                    category: 'Баскетбол',
+                    status: 'new',
+                    price: 7490,
+                    imageUri: '/assets/images/product/product-8.webp'
                 }
             ],
-            amount: 49.99,
+            amount: 17480,
             billingDate: '2025-01-01',
             shippingDate: '2025-01-01',
-            shippingAddress: { street: 'Gran Vía, 0123', city: 'Madrid', zipcode: '10298', country: 'Spain' },
+            shippingAddress: {
+                street: 'ул. Большая Садовая, д. 123',
+                city: 'Ростов-на-Дону',
+                zipcode: '344002',
+                country: 'Россия'
+            },
             delivery: 'customs-clearance',
-            customer: 'Thelma Langworth'
+            customer: 'Сергей Новиков'
         },
         {
             id: '12',
-            reference: 'order-2-12-1-2',
+            reference: 'ORD-1737500000012',
             lineItems: [
                 {
-                    id: 5,
-                    name: 'Jordan Delta',
-                    category: 'Backetball',
-                    status: 'hot',
-                    price: 21.5,
+                    id: 11,
+                    name: 'Баскетбольные Zoom Court',
+                    category: 'Баскетбол',
+                    status: 'new',
+                    price: 5990,
                     imageUri: '/assets/images/product/product-12.webp'
                 }
             ],
-            amount: 49.99,
+            amount: 5990,
             billingDate: '2025-01-01',
             shippingDate: '2025-01-01',
             shippingAddress: {
-                street: '6562 Marquis Spurs',
-                streetName: 'Green Green',
-                city: 'New Trinity',
-                zipcode: '59431-2186',
-                country: 'Haiti'
+                street: 'ул. Ленина, д. 62',
+                streetName: 'Центральный',
+                buildingNumber: '62',
+                city: 'Омск',
+                zipcode: '644043',
+                country: 'Россия'
             },
             delivery: 'shipping',
-            customer: 'Kristen Wunsch'
+            customer: 'Анна Кузнецова'
         },
         {
             id: '14',
-            reference: 'order-2-14-1-2',
+            reference: 'ORD-1737500000014',
             lineItems: [
                 {
-                    id: 5,
-                    name: 'Air Jordan XXXV PF',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-14.webp'
+                    id: 8,
+                    name: 'Баскетбольные Pro Lift 35',
+                    category: 'Баскетбол',
+                    price: 11990,
+                    imageUri: '/assets/images/product/product-9.webp'
                 }
             ],
-            amount: 19.99,
+            amount: 11990,
             billingDate: '2025-01-09',
             shippingDate: '2025-01-01',
             shippingAddress: {
-                street: '909 Mueller Pine',
-                streetName: 'Emilia Pass',
-                city: 'Cassinview',
-                zipcode: '19140',
-                country: 'Ethiopia'
+                street: 'пр. Революции, д. 9',
+                streetName: 'Центральный',
+                buildingNumber: '9',
+                city: 'Воронеж',
+                zipcode: '394018',
+                country: 'Россия'
             },
             delivery: 'packing',
-            customer: 'Steve Welch'
+            customer: 'Павел Орлов'
         },
         {
             id: '15',
-            reference: 'order-11-15-1-2',
+            reference: 'ORD-1737500000015',
             lineItems: [
                 {
-                    id: 5,
-                    name: 'Anta Waffle Racer Crater',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 21.5,
+                    id: 14,
+                    name: 'Кроссовки BB Next Gen',
+                    category: 'Фитнес',
+                    status: 'new',
+                    price: 4290,
                     imageUri: '/assets/images/product/product-15.webp'
                 },
                 {
-                    id: 5,
-                    name: 'Air Jordan XXXV PF',
-                    category: 'Track and Field',
-                    status: 'hot',
-                    price: 21.5,
-                    imageUri: '/assets/images/product/product-14.webp'
+                    id: 8,
+                    name: 'Баскетбольные Pro Lift 35',
+                    category: 'Баскетбол',
+                    price: 11990,
+                    imageUri: '/assets/images/product/product-9.webp'
                 }
             ],
-            amount: 222,
+            amount: 16280,
             billingDate: '2025-01-19',
             shippingDate: '2025-01-16',
             shippingAddress: {
-                street: '3011 VonRueden Overpass',
-                streetName: 'Schroeder Forge',
-                buildingNumber: '49707',
-                city: 'Borerland',
-                zipcode: '44163-5574',
-                country: 'Anguilla'
+                street: 'ул. Московское шоссе, д. 15, корп. 2',
+                streetName: 'Промышленный',
+                buildingNumber: '15',
+                city: 'Самара',
+                zipcode: '443086',
+                country: 'Россия'
             },
-            price: 33,
             delivery: 'delivered',
-            customer: 'Brian Jacobs'
+            customer: 'Виктория Белова'
         }
     ],
     products: [
         {
             id: '1',
-            name: 'Anta Space Hippie 04',
-            unitInStock: 10,
-            price: 56.07,
+            name: 'Кроссовки беговые Stride Pro',
+            unitInStock: 24,
+            price: 5490,
             imageUri: '/assets/images/product/product-2.webp',
             colors: ['#000000', '#FF4842', '#1890FF', '#FFFFFF'],
             status: '',
-            category: 'Aerobic Exercise'
+            category: 'Бег'
         },
         {
             id: '2',
-            name: 'XTEP Air Zoom Pegasus 37',
-            unitInStock: 10,
-            price: 64.78,
+            name: 'Кроссовки баскетбольные Court Master',
+            unitInStock: 18,
+            price: 8990,
             imageUri: '/assets/images/product/product-3.webp',
             colors: ['#FFFFFF', '#FF4842', '#1890FF', '#FFC0CB'],
             status: 'hot',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '3',
-            name: 'Nike Blazer Low 77 Vintage',
-            unitInStock: 10,
-            price: 50.2821,
+            name: 'Кроссовки лёгкие Sprint Classic',
+            unitInStock: 32,
+            price: 4290,
             imageUri: '/assets/images/product/product-4.webp',
             colors: ['#FFC0CB', '#FF4842', '#1890FF'],
             status: 'new',
-            category: 'Track and Field'
+            category: 'Лёгкая атлетика'
         },
         {
             id: '4',
-            name: 'XTEP ZoomX SuperRep Surge',
-            unitInStock: 10,
-            price: 9.3786,
+            name: 'Кроссовки для зала Fit Pulse',
+            unitInStock: 41,
+            price: 3790,
             imageUri: '/assets/images/product/product-5.webp',
             colors: ['#00AB55', '#FFFFFF', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'hot',
-            category: 'Aerobic Exercise'
+            category: 'Фитнес'
         },
         {
             id: '5',
-            name: 'Zoom Freak 2',
-            unitInStock: 10,
-            price: 61.46,
+            name: 'Шиповки Track Elite',
+            unitInStock: 15,
+            price: 6290,
             imageUri: '/assets/images/product/product-6.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
-            category: 'Track and Field'
+            category: 'Лёгкая атлетика'
         },
         {
             id: '6',
-            name: 'Nike Air Max Zephyr',
-            unitInStock: 10,
-            price: 95.76,
+            name: 'Кроссовки Air Cushion Max',
+            unitInStock: 12,
+            price: 9990,
             imageUri: '/assets/images/product/product-7.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '7',
-            name: 'Jordan Delta',
-            unitInStock: 10,
-            price: 61.77,
+            name: 'Кроссовки Urban Jump High',
+            unitInStock: 20,
+            price: 7490,
             imageUri: '/assets/images/product/product-8.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '8',
-            name: 'Air Jordan XXXV PF',
-            unitInStock: 10,
-            price: 33.18,
+            name: 'Баскетбольные Pro Lift 35',
+            unitInStock: 8,
+            price: 11990,
             imageUri: '/assets/images/product/product-9.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '9',
-            name: 'Anta Waffle Racer Crater',
-            unitInStock: 10,
-            price: 35.937,
+            name: 'Кроссовки Waffle Trail',
+            unitInStock: 27,
+            price: 4590,
             imageUri: '/assets/images/product/product-10.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#94D82D', '#FFC107'],
             status: 'hot',
-            category: 'Track and Field'
+            category: 'Лёгкая атлетика'
         },
         {
             id: '10',
-            name: 'Li-Ning 7 EP Sisterhood',
-            unitInStock: 10,
-            price: 53.3316,
+            name: 'Кроссовки Sisterhood Run 7',
+            unitInStock: 22,
+            price: 5190,
             imageUri: '/assets/images/product/product-11.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#FFC107'],
             status: '',
-            category: 'Track and Field'
+            category: 'Лёгкая атлетика'
         },
         {
             id: '11',
-            name: 'Li-Ning Air Zoom Pegasus 37',
-            unitInStock: 10,
-            price: 20.52,
+            name: 'Баскетбольные Zoom Court',
+            unitInStock: 16,
+            price: 5990,
             imageUri: '/assets/images/product/product-12.webp',
             colors: ['#00AB55', '#000000', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '12',
-            name: 'Nike Blazer Low 77 Vintage',
-            unitInStock: 10,
-            price: 62.1918,
+            name: 'Кроссовки Retro Blazer Low',
+            unitInStock: 19,
+            price: 6490,
             imageUri: '/assets/images/product/product-13.webp',
             colors: ['#00AB55', '#000000', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
-            category: 'Track and Field'
+            category: 'Лёгкая атлетика'
         },
         {
             id: '13',
-            name: 'Li-Ning ZoomX SuperRep Surge',
-            unitInStock: 10,
-            price: 19.5608,
+            name: 'Кроссовки SuperRep Surge',
+            unitInStock: 35,
+            price: 3490,
             imageUri: '/assets/images/product/product-14.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FFC107'],
             status: '',
-            category: 'Aerobic Exercise'
+            category: 'Фитнес'
         },
         {
             id: '14',
-            name: 'Anta Air Zoom BB NXT',
-            unitInStock: 10,
-            price: 25.93,
+            name: 'Кроссовки BB Next Gen',
+            unitInStock: 28,
+            price: 4290,
             imageUri: '/assets/images/product/product-15.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
-            category: 'Aerobic Exercise'
+            category: 'Фитнес'
         },
         {
             id: '15',
-            name: 'Anta Air Force 1 07 LX',
-            unitInStock: 10,
-            price: 69.68,
+            name: 'Классические кроссовки Force LX',
+            unitInStock: 14,
+            price: 7990,
             imageUri: '/assets/images/product/product-16.webp',
             colors: ['#00AB55', '#000000', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '16',
-            name: 'Anta Air Force 1 Shadow SE',
-            unitInStock: 10,
-            price: 22.68,
+            name: 'Кроссовки Shadow Edition',
+            unitInStock: 21,
+            price: 5490,
             imageUri: '/assets/images/product/product-17.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#94D82D', '#FFC107'],
             status: 'new',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '17',
-            name: 'Anta Zoom Tempo NEXT%',
-            unitInStock: 10,
-            price: 67.23,
+            name: 'Кроссовки Tempo Next',
+            unitInStock: 17,
+            price: 8490,
             imageUri: '/assets/images/product/product-18.webp',
             colors: ['#00AB55', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
-            category: 'Aerobic Exercise'
+            category: 'Фитнес'
         },
         {
             id: '18',
-            name: 'Li-Ning Air Force 1 07 LX',
-            unitInStock: 10,
-            price: 14.1669,
+            name: 'Кроссовки Street Force LX',
+            unitInStock: 26,
+            price: 3990,
             imageUri: '/assets/images/product/product-19.webp',
             colors: ['#00AB55', '#000000', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '19',
-            name: 'Li-Ning Force 1 Shadow SE',
-            unitInStock: 10,
-            price: 30.87,
+            name: 'Кроссовки Shadow Run',
+            unitInStock: 23,
+            price: 4790,
             imageUri: '/assets/images/product/product-20.webp',
             colors: ['#00AB55', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
-            category: 'Track and Field'
+            category: 'Лёгкая атлетика'
         },
         {
             id: '20',
-            name: 'Anta Air Zoom Tempo NEXT%',
-            unitInStock: 10,
-            price: 26.72,
+            name: 'Кроссовки Tempo Zoom',
+            unitInStock: 18,
+            price: 5690,
             imageUri: '/assets/images/product/product-21.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '21',
-            name: 'Anta DBreak-Type',
-            unitInStock: 10,
-            price: 44.352,
+            name: 'Кроссовки D-Break Type',
+            unitInStock: 20,
+            price: 6290,
             imageUri: '/assets/images/product/product-22.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
-            category: 'Track and Field'
+            category: 'Лёгкая атлетика'
         },
         {
             id: '22',
-            name: 'Adidas Air Max Up',
-            unitInStock: 10,
-            price: 37.11,
+            name: 'Кроссовки Air Max Up',
+            unitInStock: 11,
+            price: 8990,
             imageUri: '/assets/images/product/product-23.webp',
             colors: ['#FF4842', '#1890FF', '#94D82D'],
             status: '',
-            category: ''
+            category: 'Бег'
         },
         {
             id: '23',
-            name: 'Li-Ning Air Max 270 React ENG',
-            unitInStock: 10,
-            price: 75.53,
+            name: 'Кроссовки React 270 Flow',
+            unitInStock: 13,
+            price: 9490,
             imageUri: '/assets/images/product/product-24.webp',
             colors: ['#1890FF', '#1890FF', '#94D82D'],
             status: '',
-            category: 'Backetball'
+            category: 'Баскетбол'
         },
         {
             id: '24',
-            name: 'Anta Air Force 1 NDESTRUKT',
-            unitInStock: 10,
-            price: 34.81,
+            name: 'Кроссовки Classic Force',
+            unitInStock: 25,
+            price: 6990,
             imageUri: '/assets/images/product/product-1.webp',
             colors: ['#00AB55', '#000000', '#FF4842', '#1890FF', '#FFFFFF'],
             status: 'hot',
-            category: 'Backetball'
+            category: 'Баскетбол'
         }
     ]
 };

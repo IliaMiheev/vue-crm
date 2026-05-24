@@ -39,8 +39,8 @@ const DEFAULT_USERS: AuthUser[] = [
     id: 1,
     username: 'admin@test.com',
     password: 'password',
-    firstName: 'Admin',
-    lastName: 'Test',
+    firstName: 'Админ',
+    lastName: 'Системы',
     role: 'admin',
     token: 'token'
   },
@@ -48,8 +48,8 @@ const DEFAULT_USERS: AuthUser[] = [
     id: 2,
     username: 'admin.test@test.com',
     password: 'password',
-    firstName: 'Admin',
-    lastName: 'Test',
+    firstName: 'Админ',
+    lastName: 'Системы',
     role: 'admin',
     token: 'token'
   }
