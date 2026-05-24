@@ -2,7 +2,7 @@ const PublicRoutes = {
   path: '/',
   component: () => import('@/layouts/blank/BlankLayout.vue'),
   meta: {
-    requiresAuth: false
+    requiresAuth: true
   },
   children: [
     {

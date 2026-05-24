@@ -133,16 +133,11 @@ const lineChart2 = {
             </div>
             <v-tabs-window v-model="tab" class="z-1">
                 <v-tabs-window-item value="1">
-                    <v-row>
-                        <h2 class="text-h1 font-weight-medium">
+                        <h3 class="text-h1 font-weight-medium">
                             108.00 руб
-                            <a href="#">
-                                <CircleArrowDownLeftIcon stroke-width="1.5" width="28" class="text-white" />
-                            </a>
-                        </h2>
+                        </h3>
                         <span class="text-subtitle-1 text-medium-emphasis text-white pl-5">Итого заказов</span>
                         <apexchart type="line" height="90" :options="chartOptions1" :series="lineChart1.series"> </apexchart>
-                    </v-row>
                 </v-tabs-window-item>
                 <v-tabs-window-item value="2">
                     <v-row>

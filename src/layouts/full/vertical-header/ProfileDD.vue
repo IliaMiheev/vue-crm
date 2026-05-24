@@ -11,13 +11,6 @@ const authStore = useAuthStore();
     <span class="text-subtitle-2 text-medium-emphasis">Администратор</span>
 
     <v-list>
-      <v-list-item color="secondary" rounded="md">
-        <template v-slot:prepend>
-          <SettingsIcon size="20" class="mr-2" />
-        </template>
-        <v-list-item-title class="text-subtitle-2">Настройки аккаунта</v-list-item-title>
-      </v-list-item>
-
       <v-list-item @click="authStore.logout()" color="secondary" rounded="md">
         <template v-slot:prepend>
           <LogoutIcon size="20" class="mr-2" />

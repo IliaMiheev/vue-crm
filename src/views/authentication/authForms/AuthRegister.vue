@@ -2,10 +2,10 @@
 import { ref } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 
-const checkbox = ref(true);
+const checkbox = ref(false);
 const show1 = ref(false);
 const password = ref('password');
-const email = ref('admin.test@dummy.com');
+const email = ref('admin.test@test.com');
 const Regform = ref();
 const firstname = ref('Admin');
 const lastname = ref('Test');

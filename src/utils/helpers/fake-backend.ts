@@ -32,7 +32,7 @@ function loadDevDB() {
 function fakeBackend() {
   const users: AuthUser[] = [
     { id: 1, username: 'admin@test.com', password: 'password', firstName: 'Admin', lastName: 'Test' , token: 'token'},
-    { id: 2, username: 'admin.test@dummy.com', password: 'password', firstName: 'Admin', lastName: 'Test' , token: 'token'}];
+    { id: 2, username: 'admin.test@test.com', password: 'password', firstName: 'Admin', lastName: 'Test' , token: 'token'}];
   let cache: any = Object.assign({}, loadDevDB());
   const realFetch = window.fetch;
 

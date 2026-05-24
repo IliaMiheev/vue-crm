@@ -16,7 +16,7 @@ import AuthRegister from '../authForms/AuthRegister.vue';
                     <v-row>
                       <v-col cols="12" class="text-center">
                         <Logo />
-                        <h2 class="text-secondary text-h2 mt-8">Вход в аккаунт</h2>
+                        <h2 class="text-secondary text-h2 mt-8">Регистрация</h2>
                       </v-col>
                     </v-row>
                     <AuthRegister />
