@@ -6,7 +6,7 @@ import { storeToRefs } from 'pinia';
 import ConfirmDialog from '@/components/shared/ConfirmDialog.vue';
 import NotificationBar from '@/components/shared/NotificeBar.vue';
 import { router } from '@/router';
-import { toTitleCase } from '@/utils/locales/format';
+import { formatDeliveryStatus } from '@/utils/locales/labels';
 import { isApiSuccess } from '@/utils/helpers/route-params';
 
 const headers = [
@@ -95,7 +95,7 @@ function getColor(deliveryStatus: string): string {
           <v-chip
             :border="`${getColor(value)} thin opacity-10`"
             :color="getColor(value)"
-            :text="toTitleCase(value)"
+            :text="formatDeliveryStatus(value)"
             size="small"
           ></v-chip>
         </template>

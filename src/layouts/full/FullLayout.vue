@@ -9,7 +9,7 @@ const customizer = useCustomizerStore();
 </script>
 
 <template>
-  <v-locale-provider>
+  <v-locale-provider locale="ru">
     <v-app
       theme="PurpleTheme"
       :class="[customizer.fontTheme, customizer.mini_sidebar ? 'mini-sidebar' : '', customizer.inputBg ? 'inputWithbg' : '']"

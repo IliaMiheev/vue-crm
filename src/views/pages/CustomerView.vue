@@ -86,14 +86,14 @@ function onCreate() {
         </template>
         <template v-slot:item.membership="{ value }" class="d-flex justify-centre">
           <v-avatar size="60">
-            <v-tooltip text="Standard" location="top">
+            <v-tooltip text="Стандарт" location="top">
               <template v-slot:activator="{ props }">
                 <v-icon
                   size="x-large"
                   v-bind="props"
                   v-if="value === 'standard'"
-                  alt="Standard"
-                  title="Standard"
+                  alt="Стандарт"
+                  title="Стандарт"
                   icon="$standard"
                   color="info"
                 ></v-icon>

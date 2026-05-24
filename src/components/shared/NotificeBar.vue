@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const props = defineProps({
     notice: true,
     text: {
-        default: 'Operation is done successfully.',
+        default: 'Операция выполнена успешно.',
     },
     timeout: {
         default: 1000,

@@ -85,7 +85,7 @@ function getWidth (index:number){
 
 <template>
   <UiMainContainer>
-    <UiParentCard title="Blogs" >
+    <UiParentCard title="Блог" >
       <div v-if="blogStore.loading">
         <v-progress-linear color="secondary" height="6" indeterminate rounded></v-progress-linear>
       </div>
@@ -119,7 +119,7 @@ function getWidth (index:number){
                   </v-avatar>
                   {{ blog.author.name }}
                 </div>
-                <v-btn color="primary" variant="plain" text="Delete" size="large" @click="deleteBlog(blog.id)"></v-btn>
+                <v-btn color="primary" variant="plain" text="Удалить" size="large" @click="deleteBlog(blog.id)"></v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -127,7 +127,7 @@ function getWidth (index:number){
 
         <v-row justify="center">
           <v-col cols="12" lg="12" class="d-flex  justify-center">
-            <v-chip class="text-h5" color="primary"> Total: {{ totalCount }}</v-chip>
+            <v-chip class="text-h5" color="primary"> Всего: {{ totalCount }}</v-chip>
           </v-col>
         </v-row>
         <v-divider class="my-5" />

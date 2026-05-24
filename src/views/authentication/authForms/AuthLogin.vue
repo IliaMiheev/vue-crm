@@ -9,10 +9,13 @@ const show1 = ref(false);
 const password = ref('password');
 const username = ref('admin@test.com');
 const passwordRules = ref([
-  (v: string) => !!v || 'Password is required',
-  (v: string) => (v && v.length <= 10) || 'Password must be less than 10 characters'
+  (v: string) => !!v || 'Введите пароль',
+  (v: string) => (v && v.length <= 32) || 'Не более 32 символов'
 ]);
-const emailRules = ref([(v: string) => !!v || 'E-mail is required', (v: string) => /.+@.+\..+/.test(v) || 'E-mail must be valid']);
+const emailRules = ref([
+  (v: string) => !!v || 'Укажите почту',
+  (v: string) => /.+@.+\..+/.test(v) || 'Некорректный адрес почты'
+]);
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 function validate(values: any, { setErrors }: any) {
@@ -52,7 +55,7 @@ function validate(values: any, { setErrors }: any) {
     <div class="d-sm-flex align-center mt-2 mb-7 mb-sm-0">
       <v-checkbox
         v-model="checkbox"
-        :rules="[(v: any) => !!v || 'You must agree to continue!']"
+        :rules="[(v: any) => !!v || 'Отметьте, чтобы продолжить']"
         label="Запомнить на устройстве"
         required
         color="primary"

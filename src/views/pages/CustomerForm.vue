@@ -8,6 +8,7 @@ import { storeToRefs } from 'pinia';
 import { isApiSuccess, isCreateRoute, routeEntityId } from '@/utils/helpers/route-params';
 import { MAX_IMAGE_SIZE_MB, useImageUpload } from '@/composables/useImageUpload';
 import { PhotoIcon } from 'vue-tabler-icons';
+import { MEMBERSHIP_OPTIONS } from '@/utils/locales/labels';
 
 const AVATAR_PLACEHOLDER = '/src/assets/images/customer/avatar-0.webp';
 
@@ -141,7 +142,7 @@ async function submit(event: Event) {
                 <v-text-field
                   v-model="customer.email"
                   :rules="emailRules"
-                  label="E-mail"
+                  label="Электронная почта"
                   variant="solo-filled"
                   required
                 />
@@ -152,6 +153,7 @@ async function submit(event: Event) {
                   v-model="customer.phone"
                   :rules="[requiredRule]"
                   label="Телефон"
+                  placeholder="+7 (999) 123-45-67"
                   variant="solo-filled"
                   required
                 />
@@ -162,7 +164,8 @@ async function submit(event: Event) {
                   v-model="customer.mobile"
                   :rules="[requiredRule]"
                   variant="solo-filled"
-                  label="Домашний телефон"
+                  label="Дополнительный телефон"
+                  placeholder="+7 (999) 123-45-68"
                   required
                 />
               </v-col>
@@ -183,7 +186,9 @@ async function submit(event: Event) {
                   clearable
                   label="Членство"
                   :rules="[requiredRule]"
-                  :items="['standard', 'vip']"
+                  :items="MEMBERSHIP_OPTIONS"
+                  item-title="title"
+                  item-value="value"
                   variant="solo-filled"
                 />
               </v-col>

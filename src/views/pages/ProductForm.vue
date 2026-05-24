@@ -48,7 +48,7 @@ const emailRules = [
     (value: any) => {
         if (/.+@.+\..+/.test(value)) return true;
 
-        return 'E-mail не валидный';
+        return 'Некорректный адрес почты';
     }
 ];
 

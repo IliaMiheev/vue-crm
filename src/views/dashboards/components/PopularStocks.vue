@@ -219,7 +219,7 @@ function selectPeriod(value: string) {
 
           <div class="text-center mt-3">
             <v-btn color="primary" variant="text">
-              View All
+              Смотреть все
               <template v-slot:append>
                 <ChevronRightIcon stroke-width="1.5" width="20" />
               </template>
