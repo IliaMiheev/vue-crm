@@ -7,6 +7,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
 import type { Product } from '@/types';
 import { isApiSuccess, isCreateRoute, routeEntityId } from '@/utils/helpers/route-params';
+import { MAX_IMAGE_SIZE_MB, useImageUpload } from '@/composables/useImageUpload';
 import { PhotoIcon } from 'vue-tabler-icons';
 
 const AVATAR_PLACEHOLDER = '/src/assets/images/product/product-0.webp';
@@ -29,10 +30,15 @@ if (isCreateRoute(route.params.id)) {
 
 const { product } = storeToRefs(productStore);
 
-const imageFile = ref<File[]>([]);
-const imageError = ref('');
+const imageUri = computed({
+  get: () => product.value.imageUri,
+  set: (value: string) => {
+    product.value.imageUri = value;
+  }
+});
 
-const previewImage = computed(() => product.value.imageUri || AVATAR_PLACEHOLDER);
+const { imageFile, imageError, previewImage, hasCustomImage, onImageSelected, removeImage } =
+  useImageUpload(imageUri, AVATAR_PLACEHOLDER);
 
 const requiredRule = (value: any) => (value ? true : 'Эти поля обязательны для заполнения');
 const postiveNumberRule = (value: any) => (value > 0 ? true : 'Это число должно быть больше чем ноль');
@@ -46,46 +52,9 @@ const emailRules = [
     }
 ];
 
-const MAX_IMAGE_SIZE_MB = 2;
-
 function onCancel() {
     if (productStore.product) productStore.product = {} as any;
     router.replace({ path: `/product` });
-}
-
-function onImageSelected(files: File | File[] | null) {
-    imageError.value = '';
-    if (!files || (Array.isArray(files) && !files.length)) return;
-
-    const file = Array.isArray(files) ? files[0] : files;
-    if (!file) return;
-
-    if (!file.type.startsWith('image/')) {
-        imageError.value = 'Выберите файл изображения (JPG, PNG, WebP и т.д.)';
-        imageFile.value = [];
-        return;
-    }
-
-    if (file.size > MAX_IMAGE_SIZE_MB * 1024 * 1024) {
-        imageError.value = `Размер файла не должен превышать ${MAX_IMAGE_SIZE_MB} МБ`;
-        imageFile.value = [];
-        return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = () => {
-        product.value.imageUri = String(reader.result);
-    };
-    reader.onerror = () => {
-        imageError.value = 'Не удалось прочитать файл';
-    };
-    reader.readAsDataURL(file);
-}
-
-function removeImage() {
-    imageFile.value = [];
-    imageError.value = '';
-    product.value.imageUri = '';
 }
 
 async function submit(event: any) {
@@ -152,7 +121,7 @@ async function submit(event: any) {
                                         JPG, PNG или WebP, до {{ MAX_IMAGE_SIZE_MB }} МБ
                                     </p>
                                     <v-btn
-                                        v-if="product.imageUri"
+                                        v-if="hasCustomImage"
                                         class="mt-2"
                                         variant="text"
                                         color="error"
