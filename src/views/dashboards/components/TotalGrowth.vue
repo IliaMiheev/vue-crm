@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import ruLocale from 'apexcharts/dist/locales/ru.json';
 
 interface PeriodItem {
   state: string;
@@ -61,9 +62,11 @@ const chartOptions = computed(() => ({
     height: 480,
     fontFamily: 'inherit',
     foreColor: '#a1aab2',
-    stacked: true
+    stacked: true,
+    locales: [ruLocale],
+    defaultLocale: 'ru'
   },
-  colors: ['#eef2f6', '#1e88e5', '#5e35b1', '#ede7f6'],
+  colors: ['#ffc107', '#1e88e5', '#5e35b1', '#00c853'],
   responsive: [
     {
       breakpoint: 480,
@@ -142,10 +145,11 @@ const chartSeries = computed(() => currentData.value.series);
               label="Период"
               return-object
               single-line
+              :menu-props="{ minWidth: 220 }"
             />
           </v-col>
         </v-row>
-        <div class="mt-4">
+        <div class="mt-4 total-growth-chart">
           <apexchart
             :key="select.abbr"
             type="bar"
@@ -158,3 +162,20 @@ const chartSeries = computed(() => currentData.value.series);
     </v-card>
   </v-card>
 </template>
+
+<style scoped lang="scss">
+.total-growth-chart {
+  :deep(.apexcharts-toolbar) {
+    max-width: none;
+  }
+
+  :deep(.apexcharts-menu) {
+    min-width: 7rem;
+    width: max-content;
+  }
+
+  :deep(.apexcharts-menu-item) {
+    white-space: nowrap;
+  }
+}
+</style>
