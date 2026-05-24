@@ -9,6 +9,7 @@ const MainRoutes = {
     {
       name: 'LandingPage',
       path: '/',
+      meta: { requiresAuth: true },
       component: () => import('@/views/dashboards/Dashboard.vue')
     },
     {

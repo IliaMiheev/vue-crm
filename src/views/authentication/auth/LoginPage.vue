@@ -16,8 +16,7 @@ import AuthLogin from '../authForms/AuthLogin.vue';
                     <v-row>
                       <v-col cols="12" class="text-center">
                         <Logo />
-                        <h2 class="text-secondary text-h2 mt-8">Привет, с возвращением</h2>
-                        <h4 class="text-disabled text-h4 mt-3">Введи данные чтобы продолжить</h4>
+                        <h2 class="text-secondary text-h2 mt-8">С возвращением</h2>
                       </v-col>
                     </v-row>
                     <AuthLogin />

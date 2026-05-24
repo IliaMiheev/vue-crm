@@ -59,9 +59,7 @@ function validate(values: any, { setErrors }: any) {
         class="ms-n2"
         hide-details
       ></v-checkbox>
-      <div class="ml-auto">
-        <a href="javascript:void(0)" class="text-primary text-decoration-none">Забыл пароль?</a>
-      </div>
+
     </div>
     <v-btn color="secondary" :loading="isSubmitting" block class="mt-2" variant="flat" size="large" :disabled="valid" type="submit">
       Войти</v-btn

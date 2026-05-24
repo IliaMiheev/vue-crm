@@ -3,21 +3,109 @@ import db from './mock.db'
 export { fakeBackend };
 
 
+export type UserRole = 'admin' | 'user';
+
 export interface AuthUser {
   id: number;
   username: string;
   password: string;
   firstName: string;
   lastName: string;
+  role: UserRole;
   token: string;
 }
 
-interface ResponseBody {
+export interface SessionUser {
   id: number;
   username: string;
   firstName: string;
   lastName: string;
+  role: UserRole;
   token: string;
+}
+
+interface ResponseBody extends SessionUser {}
+
+export interface RegisterPayload {
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+}
+
+const REGISTERED_USERS_KEY = 'crm-registered-users';
+
+const DEFAULT_USERS: AuthUser[] = [
+  {
+    id: 1,
+    username: 'admin@test.com',
+    password: 'password',
+    firstName: 'Admin',
+    lastName: 'Test',
+    role: 'admin',
+    token: 'token'
+  },
+  {
+    id: 2,
+    username: 'admin.test@test.com',
+    password: 'password',
+    firstName: 'Admin',
+    lastName: 'Test',
+    role: 'admin',
+    token: 'token'
+  }
+];
+
+function normalizeUser(user: AuthUser): AuthUser {
+  if (!user.role) {
+    const isDefault = DEFAULT_USERS.some((d) => d.username.toLowerCase() === user.username.toLowerCase());
+    user.role = isDefault ? 'admin' : 'user';
+  }
+  return user;
+}
+
+function toSessionUser(user: AuthUser): ResponseBody {
+  return {
+    id: user.id,
+    username: user.username,
+    firstName: user.firstName,
+    lastName: user.lastName,
+    role: user.role,
+    token: 'fake-jwt-token'
+  };
+}
+
+function loadUsers(): AuthUser[] {
+  const users = DEFAULT_USERS.map((u) => ({ ...u }));
+  try {
+    const stored = localStorage.getItem(REGISTERED_USERS_KEY);
+    if (!stored) return users;
+    const registered: AuthUser[] = JSON.parse(stored);
+    for (const user of registered) {
+      if (!users.some((u) => u.username.toLowerCase() === user.username.toLowerCase())) {
+        users.push(normalizeUser(user));
+      }
+    }
+  } catch {
+    /* ignore corrupted storage */
+  }
+  return users;
+}
+
+function persistRegisteredUser(user: AuthUser) {
+  if (DEFAULT_USERS.some((u) => u.username.toLowerCase() === user.username.toLowerCase())) {
+    return;
+  }
+  try {
+    const stored = localStorage.getItem(REGISTERED_USERS_KEY);
+    const registered: AuthUser[] = stored ? JSON.parse(stored) : [];
+    if (!registered.some((u) => u.username.toLowerCase() === user.username.toLowerCase())) {
+      registered.push(user);
+      localStorage.setItem(REGISTERED_USERS_KEY, JSON.stringify(registered));
+    }
+  } catch {
+    /* ignore storage errors */
+  }
 }
 
 function loadDevDB() {
@@ -30,9 +118,7 @@ function loadDevDB() {
 }
 
 function fakeBackend() {
-  const users: AuthUser[] = [
-    { id: 1, username: 'admin@test.com', password: 'password', firstName: 'Admin', lastName: 'Test' , token: 'token'},
-    { id: 2, username: 'admin.test@test.com', password: 'password', firstName: 'Admin', lastName: 'Test' , token: 'token'}];
+  const users: AuthUser[] = loadUsers();
   let cache: any = Object.assign({}, loadDevDB());
   const realFetch = window.fetch;
 
@@ -43,6 +129,8 @@ function fakeBackend() {
 
       function handleRoute() {
         switch (true) {
+          case url.endsWith('/users/register') && opts.method === 'POST':
+            return registerUser();
           case url.endsWith('/users/authenticate') && opts.method === 'POST':
             return authenticate();
           case url.endsWith('/users') && opts.method === 'GET':
@@ -104,18 +192,46 @@ function fakeBackend() {
       }
 
       // route functions
+      function registerUser() {
+        const { username, password, firstName, lastName } = body() as RegisterPayload;
+
+        if (!username?.trim()) return error('Укажите почту');
+        if (!firstName?.trim() || !lastName?.trim()) return error('Укажите имя и фамилию');
+        if (!password || password.length < 6) return error('Пароль должен быть не менее 6 символов');
+        if (password.length > 32) return error('Пароль не должен превышать 32 символа');
+
+        const email = username.trim().toLowerCase();
+        if (!/.+@.+\..+/.test(email)) return error('Некорректный адрес почты');
+
+        if (users.some((u) => u.username.toLowerCase() === email)) {
+          return error('Пользователь с такой почтой уже зарегистрирован');
+        }
+
+        const newUser: AuthUser = {
+          id: Math.max(0, ...users.map((u) => u.id)) + 1,
+          username: email,
+          password,
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          role: 'user',
+          token: 'token'
+        };
+
+        users.push(newUser);
+        persistRegisteredUser(newUser);
+        cache = Object.assign({}, loadDevDB());
+
+        return ok(toSessionUser(newUser));
+      }
+
       function authenticate() {
         const { username, password } = body();
-        const user = users.find((x) => x.username === username && x.password === password);
-        if (!user) return error('Username or password is incorrect');
-        cache = Object.assign({}, db);
-        return ok({
-          id: user.id,
-          username: user.username,
-          firstName: user.firstName,
-          lastName: user.lastName,
-          token: 'fake-jwt-token'
-        });
+        const email = username?.trim().toLowerCase();
+        const user = users.find((x) => x.username.toLowerCase() === email && x.password === password);
+        if (!user) return error('Неверный логин или пароль');
+        normalizeUser(user);
+        cache = Object.assign({}, loadDevDB());
+        return ok(toSessionUser(user));
       }
 
       function getUsers() {

@@ -2,61 +2,104 @@
 import { ref } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 
+const authStore = useAuthStore();
+const regForm = ref();
 const checkbox = ref(false);
 const show1 = ref(false);
-const password = ref('password');
-const email = ref('admin.test@test.com');
-const Regform = ref();
-const firstname = ref('Admin');
-const lastname = ref('Test');
-const passwordRules = ref([
-  (v: string) => !!v || 'Password is required',
-  (v: string) => (v && v.length <= 10) || 'Password must be less than 10 characters'
-]);
-const emailRules = ref([(v: string) => !!v || 'E-mail is required', (v: string) => /.+@.+\..+/.test(v) || 'E-mail must be valid']);
+const password = ref('');
+const email = ref('');
+const firstname = ref('');
+const lastname = ref('');
+const apiError = ref('');
+const isSubmitting = ref(false);
 
-function validate() {
-  Regform.value.validate();
-  const authStore = useAuthStore();
-  return authStore.register(email.value, password.value);
+const nameRules = [
+  (v: string) => !!v?.trim() || 'Обязательное поле',
+  (v: string) => (v?.trim().length >= 2) || 'Минимум 2 символа'
+];
+
+const emailRules = [
+  (v: string) => !!v?.trim() || 'Укажите почту',
+  (v: string) => /.+@.+\..+/.test(v) || 'Некорректный адрес почты'
+];
+
+const passwordRules = [
+  (v: string) => !!v || 'Введите пароль',
+  (v: string) => (v && v.length >= 6) || 'Минимум 6 символов',
+  (v: string) => (v && v.length <= 32) || 'Не более 32 символов'
+];
+
+const agreementRules = [(v: boolean) => !!v || 'Необходимо принять правила сервиса'];
+
+function formatApiError(error: unknown): string {
+  if (typeof error === 'string') return error;
+  return 'Не удалось зарегистрироваться';
+}
+
+async function onSubmit() {
+  apiError.value = '';
+  const { valid } = (await regForm.value?.validate()) ?? { valid: false };
+  if (!valid) return;
+
+  isSubmitting.value = true;
+  try {
+    await authStore.register({
+      username: email.value.trim(),
+      password: password.value,
+      firstName: firstname.value.trim(),
+      lastName: lastname.value.trim()
+    });
+  } catch (error) {
+    apiError.value = formatApiError(error);
+  } finally {
+    isSubmitting.value = false;
+  }
 }
 </script>
 
 <template>
-  <v-form ref="Regform" action="/dashboard" class="mt-7 loginForm">
+  <v-form ref="regForm" class="mt-7 loginForm" @submit.prevent="onSubmit">
     <v-row>
       <v-col cols="12" sm="6">
         <v-text-field
           v-model="firstname"
+          :rules="nameRules"
           density="comfortable"
           hide-details="auto"
           variant="outlined"
           color="primary"
           label="Имя"
-        ></v-text-field>
+          required
+        />
       </v-col>
       <v-col cols="12" sm="6">
         <v-text-field
           v-model="lastname"
+          :rules="nameRules"
           density="comfortable"
           hide-details="auto"
           variant="outlined"
           color="primary"
           label="Фамилия"
-        ></v-text-field>
+          required
+        />
       </v-col>
     </v-row>
+
     <v-text-field
       v-model="email"
       :rules="emailRules"
-      label="Почта / Юзернейм"
+      label="Почта"
       class="mt-4 mb-4"
+      type="email"
+      autocomplete="email"
       required
       density="comfortable"
       hide-details="auto"
       variant="outlined"
       color="primary"
-    ></v-text-field>
+    />
+
     <v-text-field
       v-model="password"
       :rules="passwordRules"
@@ -66,29 +109,46 @@ function validate() {
       variant="outlined"
       color="primary"
       hide-details="auto"
+      autocomplete="new-password"
       :append-icon="show1 ? '$eye' : '$eyeOff'"
       :type="show1 ? 'text' : 'password'"
-      @click:append="show1 = !show1"
       class="pwdInput"
-    ></v-text-field>
+      @click:append="show1 = !show1"
+    />
 
-    <div class="d-sm-inline-flex align-center mt-2 mb-7 mb-sm-0 font-weight-bold">
+    <div class="d-sm-inline-flex align-center mt-2 mb-2 font-weight-bold">
       <v-checkbox
         v-model="checkbox"
-        :rules="[(v: any) => !!v || 'You must agree to continue!']"
+        :rules="agreementRules"
         label="Согласны с"
         required
         color="primary"
         class="ms-n2"
-        hide-details
-      ></v-checkbox>
-      <a href="#" class="ml-1 text-lightText">Правилами сервиса?</a>
+        hide-details="auto"
+      />
+      <a href="#" class="ml-1 text-lightText" @click.prevent>Правилами сервиса?</a>
     </div>
-    <v-btn color="secondary" block class="mt-2" variant="flat" size="large" @click="validate()">Зарегистрироваться</v-btn>
+
+    <v-alert v-if="apiError" type="error" variant="tonal" class="mt-2 mb-2" density="compact">
+      {{ apiError }}
+    </v-alert>
+
+    <v-btn
+      color="secondary"
+      block
+      class="mt-2"
+      variant="flat"
+      size="large"
+      type="submit"
+      :loading="isSubmitting"
+    >
+      Зарегистрироваться
+    </v-btn>
   </v-form>
+
   <div class="mt-5 text-right">
     <v-divider />
-    <v-btn variant="plain" to="/login" class="mt-2 text-capitalize mr-n2" type="submit">Уже есть аккаунт?</v-btn>
+    <v-btn variant="plain" to="/login" class="mt-2 text-capitalize mr-n2">Уже есть аккаунт?</v-btn>
   </div>
 </template>
 
@@ -100,6 +160,11 @@ function validate() {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+  }
+}
+.loginForm {
+  .v-text-field .v-field--active input {
+    font-weight: 500;
   }
 }
 </style>

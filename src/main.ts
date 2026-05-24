@@ -16,9 +16,9 @@ import print from 'vue3-print-nb';
 
 const app = createApp(App);
 fakeBackend();
+app.use(createPinia());
 app.use(router);
 app.use(PerfectScrollbarPlugin);
-app.use(createPinia());
 app.use(VueTablerIcons);
 app.use(print);
 app.use(VueApexCharts);
