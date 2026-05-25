@@ -197,8 +197,26 @@ async function submit(event: Event) {
           <v-divider />
           <v-row justify="end">
             <v-col cols="12" class="d-flex ga-6 mt-8 justify-end">
-              <v-btn :loading="loading" color="secondary" variant="flat" type="submit">Отправить</v-btn>
-              <v-btn color="primary" variant="outlined" @click="onCancel">Отменить</v-btn>
+              <v-btn
+                :loading="loading"
+                color="secondary"
+                variant="flat"
+                type="submit"
+                size="large"
+                class="px-8"
+                @click="submit"
+              >
+                Подтвердить
+              </v-btn>
+              <v-btn
+                size="large" 
+                class="px-8" 
+                color="primary" 
+                variant="outlined" 
+                @click="onCancel"
+              >
+                Отменить
+              </v-btn>
             </v-col>
           </v-row>
         </v-form>
