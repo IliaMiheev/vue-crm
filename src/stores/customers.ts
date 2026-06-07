@@ -58,7 +58,7 @@ export const useCustomersStore = defineStore("Customers", {
           avatar: '',
           mobile: '',
           phone: '',
-          membership: '',
+          membership: 'standard',
           rewards: 0,
           hasItemInShoppingCart: false
         }

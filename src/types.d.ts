@@ -66,7 +66,7 @@ export interface Product {
   unitInStock: string;
   price: number;
   retailPrice: number;
-  colors?: [];
+  colors?: string[];
   imageUri?: string;
   releaseDate?: string;
   status?: string

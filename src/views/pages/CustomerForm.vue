@@ -2,13 +2,19 @@
 import UiMainContainer from '@/components/shared/UiMainContainer.vue';
 import UiParentCard from '@/components/shared/UiParentCard.vue';
 import { useCustomersStore } from '@/stores/customers';
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
 import { isApiSuccess, isCreateRoute, routeEntityId } from '@/utils/helpers/route-params';
 import { MAX_IMAGE_SIZE_MB, useImageUpload } from '@/composables/useImageUpload';
 import { PhotoIcon } from 'vue-tabler-icons';
 import { MEMBERSHIP_OPTIONS } from '@/utils/locales/labels';
+import {
+  formatRuPhone,
+  RU_PHONE_MAX_LENGTH,
+  RU_PHONE_PLACEHOLDER,
+  ruPhoneRule
+} from '@/utils/helpers/ru-phone';
 
 const AVATAR_PLACEHOLDER = '/src/assets/images/customer/avatar-0.webp';
 
@@ -46,6 +52,20 @@ const emailRules = [
   requiredRule,
   (value: string) => (/.+@.+\..+/.test(value) ? true : 'Некорректный адрес почты')
 ];
+const phoneRules = [requiredRule, ruPhoneRule];
+
+function setPhoneField(field: 'phone' | 'mobile', value: string) {
+  customer.value[field] = formatRuPhone(value);
+}
+
+watch(
+  () => [customer.value.phone, customer.value.mobile] as const,
+  ([phone, mobile]) => {
+    if (phone) customer.value.phone = formatRuPhone(phone);
+    if (mobile) customer.value.mobile = formatRuPhone(mobile);
+  },
+  { immediate: true }
+);
 
 function onCancel() {
   customerStore.customer = {} as typeof customerStore.customer;
@@ -150,23 +170,28 @@ async function submit(event: Event) {
 
               <v-col cols="12" md="4">
                 <v-text-field
-                  v-model="customer.phone"
-                  :rules="[requiredRule]"
+                  :model-value="customer.phone"
+                  :rules="phoneRules"
                   label="Телефон"
-                  placeholder="+7 (999) 123-45-67"
+                  :placeholder="RU_PHONE_PLACEHOLDER"
+                  :maxlength="RU_PHONE_MAX_LENGTH"
+                  inputmode="tel"
                   variant="solo-filled"
                   required
+                  @update:model-value="setPhoneField('phone', $event)"
                 />
               </v-col>
 
               <v-col cols="12" md="4">
                 <v-text-field
-                  v-model="customer.mobile"
-                  :rules="[requiredRule]"
+                  :model-value="customer.mobile"
+                  :rules="[ruPhoneRule]"
                   variant="solo-filled"
                   label="Дополнительный телефон"
-                  placeholder="+7 (999) 123-45-68"
-                  required
+                  :placeholder="RU_PHONE_PLACEHOLDER"
+                  :maxlength="RU_PHONE_MAX_LENGTH"
+                  inputmode="tel"
+                  @update:model-value="setPhoneField('mobile', $event)"
                 />
               </v-col>
 

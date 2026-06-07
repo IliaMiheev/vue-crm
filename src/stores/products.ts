@@ -79,7 +79,7 @@ export const useProductsStore = defineStore("Products", {
           // category: Category,
           imageUri: '',
           releaseDate: '',
-          colors: ['#1890FF'] as unknown as []
+          colors: ['#1890FF']
         }
         this.loading = false
       }
