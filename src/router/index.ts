@@ -1,12 +1,20 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import MainRoutes from './MainRoutes';
 import PublicRoutes from './PublicRoutes';
 import { useAuthStore } from '@/stores/auth';
 
 const publicPaths = ['/login', '/register', '/loading', '/notfound'];
 
+/** file:// в Electron не поддерживает history API — используем hash */
+function createAppHistory() {
+  if (typeof window !== 'undefined' && window.location.protocol === 'file:') {
+    return createWebHashHistory();
+  }
+  return createWebHistory(import.meta.env.BASE_URL);
+}
+
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createAppHistory(),
   routes: [
     {
       path: '/:pathMatch(.*)*',

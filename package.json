@@ -11,7 +11,10 @@
     "build-prod": "vue-tsc --noEmit && vite build --base=/",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-pattern .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-pattern .gitignore",
+    "electron:dev": "npm run start --prefix electron-app",
+    "electron:package": "npm run package --prefix electron-app",
+    "electron:make": "npm run make --prefix electron-app"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",

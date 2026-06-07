@@ -6,6 +6,10 @@
 # Node artifact files
 node_modules/
 dist/
+.vite/
+electron-app/.vite/
+electron-app/out/
+electron-app/node_modules/
 
 # Compiled Java class files
 *.class
