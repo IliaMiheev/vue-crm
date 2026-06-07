@@ -1,5 +1,6 @@
 import db from './mock.db';
 import { devDB } from './mock.db.dev';
+import { idbSet, migrateLocalStorageKey } from './indexed-db';
 
 const CRM_DB_KEY = 'crm-database';
 export const CRM_MODELS = ['customers', 'products', 'orders', 'blogs'] as const;
@@ -208,38 +209,44 @@ function getBaseDb(): Record<string, unknown> {
   return db as Record<string, unknown>;
 }
 
-export function loadCrmDatabase(): Record<string, unknown> {
-  const cache = JSON.parse(JSON.stringify(getBaseDb())) as Record<string, unknown>;
-
-  try {
-    const stored = localStorage.getItem(CRM_DB_KEY);
-    if (!stored) return cache;
-
-    const parsed = JSON.parse(stored) as Partial<Record<CrmModel, unknown[]>>;
-    for (const model of CRM_MODELS) {
-      if (!Array.isArray(parsed[model])) continue;
-      if (model === 'customers' && shouldReplaceCustomersFromBase(parsed.customers)) {
-        continue;
-      }
-      if (model === 'products' && shouldReplaceProductsFromBase(parsed.products)) {
-        continue;
-      }
-      cache[model] = parsed[model];
-    }
-  } catch {
-    /* ignore corrupted storage */
-  }
-
+function applyNormalizations(cache: Record<string, unknown>) {
   localizeCustomerPhones(cache.customers);
   normalizeOrderReferences(cache.orders);
   normalizeOrderCustomers(cache.orders);
   normalizeShippingAddresses(cache.orders);
   syncOrderLineItemsWithProducts(cache.orders, cache.products);
-
   return cache;
 }
 
-export function persistCrmDatabase(cache: Record<string, unknown>) {
+function mergeStoredData(cache: Record<string, unknown>, parsed: Partial<Record<CrmModel, unknown[]>>) {
+  for (const model of CRM_MODELS) {
+    if (!Array.isArray(parsed[model])) continue;
+    if (model === 'customers' && shouldReplaceCustomersFromBase(parsed.customers)) {
+      continue;
+    }
+    if (model === 'products' && shouldReplaceProductsFromBase(parsed.products)) {
+      continue;
+    }
+    cache[model] = parsed[model];
+  }
+  return cache;
+}
+
+export async function loadCrmDatabase(): Promise<Record<string, unknown>> {
+  const cache = JSON.parse(JSON.stringify(getBaseDb())) as Record<string, unknown>;
+
+  try {
+    const parsed = await migrateLocalStorageKey<Partial<Record<CrmModel, unknown[]>>>(CRM_DB_KEY);
+    if (!parsed) return applyNormalizations(cache);
+    mergeStoredData(cache, parsed);
+  } catch {
+    /* ignore corrupted storage */
+  }
+
+  return applyNormalizations(cache);
+}
+
+export async function persistCrmDatabase(cache: Record<string, unknown>): Promise<void> {
   try {
     const payload: Partial<Record<CrmModel, unknown[]>> = {};
     for (const model of CRM_MODELS) {
@@ -247,7 +254,7 @@ export function persistCrmDatabase(cache: Record<string, unknown>) {
         payload[model] = cache[model] as unknown[];
       }
     }
-    localStorage.setItem(CRM_DB_KEY, JSON.stringify(payload));
+    await idbSet(CRM_DB_KEY, payload);
   } catch {
     /* ignore storage errors */
   }

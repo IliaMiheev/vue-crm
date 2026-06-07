@@ -1,5 +1,7 @@
 import { loadCrmDatabase, persistCrmDatabase } from './crm-db-storage';
-export { fakeBackend };
+import { idbGet, idbSet, migrateLocalStorageKey } from './indexed-db';
+
+export { initFakeBackend };
 
 
 export type UserRole = 'admin' | 'user';
@@ -74,12 +76,11 @@ function toSessionUser(user: AuthUser): ResponseBody {
   };
 }
 
-function loadUsers(): AuthUser[] {
+async function loadUsers(): Promise<AuthUser[]> {
   const users = DEFAULT_USERS.map((u) => ({ ...u }));
   try {
-    const stored = localStorage.getItem(REGISTERED_USERS_KEY);
-    if (!stored) return users;
-    const registered: AuthUser[] = JSON.parse(stored);
+    const registered = await migrateLocalStorageKey<AuthUser[]>(REGISTERED_USERS_KEY);
+    if (!registered) return users;
     for (const user of registered) {
       if (!users.some((u) => u.username.toLowerCase() === user.username.toLowerCase())) {
         users.push(normalizeUser(user));
@@ -91,25 +92,24 @@ function loadUsers(): AuthUser[] {
   return users;
 }
 
-function persistRegisteredUser(user: AuthUser) {
+async function persistRegisteredUser(user: AuthUser) {
   if (DEFAULT_USERS.some((u) => u.username.toLowerCase() === user.username.toLowerCase())) {
     return;
   }
   try {
-    const stored = localStorage.getItem(REGISTERED_USERS_KEY);
-    const registered: AuthUser[] = stored ? JSON.parse(stored) : [];
+    const registered = (await idbGet<AuthUser[]>(REGISTERED_USERS_KEY)) ?? [];
     if (!registered.some((u) => u.username.toLowerCase() === user.username.toLowerCase())) {
       registered.push(user);
-      localStorage.setItem(REGISTERED_USERS_KEY, JSON.stringify(registered));
+      await idbSet(REGISTERED_USERS_KEY, registered);
     }
   } catch {
     /* ignore storage errors */
   }
 }
 
-function fakeBackend() {
-  const users: AuthUser[] = loadUsers();
-  let cache: Record<string, unknown> = loadCrmDatabase();
+async function initFakeBackend() {
+  const users: AuthUser[] = await loadUsers();
+  let cache: Record<string, unknown> = await loadCrmDatabase();
   const realFetch = window.fetch;
 
   window.fetch = function (url: string, opts: { method: string; headers: { [key: string]: string }; body?: string }) {
@@ -209,7 +209,7 @@ function fakeBackend() {
         };
 
         users.push(newUser);
-        persistRegisteredUser(newUser);
+        void persistRegisteredUser(newUser);
 
         return ok(toSessionUser(newUser));
       }
@@ -248,7 +248,7 @@ function fakeBackend() {
         const idx = collection.findIndex((c) => String(c.id) === String(id));
         if (idx === -1) return error('Запись не найдена');
         collection.splice(idx, 1);
-        persistCrmDatabase(cache);
+        void persistCrmDatabase(cache);
         return ok({ status: '204' });
       }
 
@@ -273,7 +273,7 @@ function fakeBackend() {
           payload.id = payload.id || nextEntityId(model);
           collection.push(payload);
         }
-        persistCrmDatabase(cache);
+        void persistCrmDatabase(cache);
         return ok({ status: '204' });
       }
 
