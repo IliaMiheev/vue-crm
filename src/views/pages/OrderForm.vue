@@ -159,14 +159,6 @@ async function submitAdvanceStatus(event: Event) {
                     prepend-inner-icon="$calendar"
                   />
                 </v-col>
-                <v-col cols="12" md="4">
-                  <v-text-field
-                    :model-value="order.amount"
-                    label="Сумма (руб)"
-                    variant="solo-filled"
-                    readonly
-                  />
-                </v-col>
               </v-row>
 
               <v-card variant="outlined" class="mb-4">
@@ -241,6 +233,17 @@ async function submitAdvanceStatus(event: Event) {
                   </v-table>
                 </v-card-text>
               </v-card>
+
+              <v-row>
+                <v-col cols="12" md="4">
+                  <v-text-field
+                    :model-value="order.amount"
+                    label="Сумма (руб)"
+                    variant="solo-filled"
+                    readonly
+                  />
+                </v-col>
+              </v-row>
             </v-container>
 
             <v-row justify="end">
@@ -279,14 +282,6 @@ async function submitAdvanceStatus(event: Event) {
                 </v-col>
                 <v-col cols="12" md="4">
                   <v-text-field v-model="order.customer" label="Клиент" disabled variant="solo-filled" />
-                </v-col>
-                <v-col cols="12" md="4">
-                  <v-text-field
-                    :model-value="order.amount"
-                    label="Сумма"
-                    disabled
-                    variant="solo-filled"
-                  />
                 </v-col>
                 <v-col cols="12" md="4">
                   <v-text-field
@@ -366,6 +361,21 @@ async function submitAdvanceStatus(event: Event) {
                 </v-sheet>
               </v-card-text>
             </v-card>
+
+            <v-divider class="my-5" />
+
+            <v-container class="pa-0">
+              <v-row>
+                <v-col cols="12" md="4">
+                  <v-text-field
+                    :model-value="order.amount"
+                    label="Сумма"
+                    disabled
+                    variant="solo-filled"
+                  />
+                </v-col>
+              </v-row>
+            </v-container>
 
             <v-divider class="my-5" />
 
