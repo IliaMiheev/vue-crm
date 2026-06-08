@@ -26,7 +26,7 @@ const dialog = ref(false);
 const search = ref('');
 const notice = ref(false);
 const selectedId = ref('');
-const AVATAR_PLACEHOLDER = '/src/assets/images/customer/avatar-0.webp';
+const AVATAR_PLACEHOLDER = 'assets/images/customer/avatar-0.webp';
 
 function editCustomer(id: string) {
   router.replace({ path: `/customer/${id}` });

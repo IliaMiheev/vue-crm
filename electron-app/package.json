@@ -6,6 +6,10 @@
   "main": ".vite/build/main.js",
   "private": true,
   "scripts": {
+    "icon": "node scripts/generate-icon.mjs",
+    "prestart": "npm run icon",
+    "prepackage": "npm run icon",
+    "premake": "npm run icon",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
@@ -29,6 +33,7 @@
     "@vitejs/plugin-vue": "5.2.1",
     "electron": "42.2.0",
     "sass": "1.79.6",
+    "to-ico": "^1.1.5",
     "vite": "6.0.7",
     "vite-plugin-static-copy": "^2.3.0",
     "vite-plugin-vuetify": "2.1.0"

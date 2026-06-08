@@ -8,16 +8,16 @@
         </div>
         <div class="d-flex align-center justify-center flex-wrap flex-row-reverse">
           <v-avatar size="35" variant="outlined" color="surface" class="ml-n2">
-            <img src="@/assets/images/users/avatar-4.png" width="35" alt="vector" />
+            <img src="@/assets/images/customer/avatar-4.png" width="35" alt="Поддержка" />
           </v-avatar>
           <v-avatar size="35" variant="outlined" color="surface" class="ml-n2">
-            <img src="@/assets/images/users/avatar-3.png" width="35" alt="vector" />
+            <img src="@/assets/images/customer/avatar-3.png" width="35" alt="Поддержка" />
           </v-avatar>
           <v-avatar size="35" variant="outlined" color="surface" class="ml-n2">
-            <img src="@/assets/images/users/avatar-2.png" width="35" alt="vector" />
+            <img src="@/assets/images/customer/avatar-2.png" width="35" alt="Поддержка" />
           </v-avatar>
           <v-avatar size="35" variant="outlined" color="surface">
-            <img src="@/assets/images/users/avatar-1.png" width="35" alt="vector" />
+            <img src="@/assets/images/customer/avatar-1.png" width="35" alt="Поддержка" />
           </v-avatar>
         </div>
       </div>

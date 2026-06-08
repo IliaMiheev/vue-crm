@@ -1,5 +1,4 @@
 import db from './mock.db';
-import { devDB } from './mock.db.dev';
 import { idbSet, migrateLocalStorageKey } from './indexed-db';
 
 const CRM_DB_KEY = 'crm-database';
@@ -199,17 +198,68 @@ function localizeCustomerPhones(customers: unknown) {
   });
 }
 
-function getBaseDb(): Record<string, unknown> {
-  if (
-    import.meta.env.DEV ||
-    (import.meta.env.API_URL && String(import.meta.env.API_URL).startsWith('http://localhost'))
-  ) {
-    return devDB as Record<string, unknown>;
+function normalizeImagePath(value: unknown): unknown {
+  if (typeof value !== 'string') return value;
+  if (value.startsWith('/src/assets/images/')) return value.slice('/src/'.length);
+  if (value.startsWith('/assets/images/')) return value.slice(1);
+  return value;
+}
+
+function normalizeImagePathsInRecords(records: unknown, keys: string[]) {
+  if (!Array.isArray(records)) return;
+  for (const record of records) {
+    if (!record || typeof record !== 'object') continue;
+    for (const key of keys) {
+      if (key in record) {
+        (record as Record<string, unknown>)[key] = normalizeImagePath(
+          (record as Record<string, unknown>)[key]
+        );
+      }
+    }
   }
+}
+
+function normalizeImagePaths(cache: Record<string, unknown>) {
+  normalizeImagePathsInRecords(cache.customers, ['avatar']);
+  normalizeImagePathsInRecords(cache.products, ['imageUri']);
+  normalizeImagePathsInRecords(cache.blogs, ['coverUrl']);
+
+  if (Array.isArray(cache.blogs)) {
+    for (const blog of cache.blogs) {
+      if (!blog || typeof blog !== 'object') continue;
+      const author = (blog as Record<string, unknown>).author;
+      if (author && typeof author === 'object' && 'avatar' in author) {
+        (author as Record<string, unknown>).avatar = normalizeImagePath(
+          (author as Record<string, unknown>).avatar
+        );
+      }
+    }
+  }
+
+  if (Array.isArray(cache.orders)) {
+    for (const order of cache.orders) {
+      if (!order || typeof order !== 'object') continue;
+      const lineItems = (order as Record<string, unknown>).lineItems;
+      if (!Array.isArray(lineItems)) continue;
+      for (const item of lineItems) {
+        if (item && typeof item === 'object' && 'imageUri' in item) {
+          (item as Record<string, unknown>).imageUri = normalizeImagePath(
+            (item as Record<string, unknown>).imageUri
+          );
+        }
+      }
+    }
+  }
+
+  return cache;
+}
+
+function getBaseDb(): Record<string, unknown> {
   return db as Record<string, unknown>;
 }
 
 function applyNormalizations(cache: Record<string, unknown>) {
+  normalizeImagePaths(cache);
   localizeCustomerPhones(cache.customers);
   normalizeOrderReferences(cache.orders);
   normalizeOrderCustomers(cache.orders);

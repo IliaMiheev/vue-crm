@@ -15,7 +15,7 @@ const { filteredData, filter, totalPages, currentPage, totalCount } = storeToRef
 const dialog = ref(false)
 const notice = ref(false)
 const selectedId = ref('')
-const AVATAR_PLACEHOLDER = "/src/assets/images/blog/avatar-0.webp"
+const AVATAR_PLACEHOLDER = 'assets/images/avatar/avatar-1.webp';
 
 function editBlog(id: string) {
   router.replace({ path: `/blog/${id}` });
@@ -114,7 +114,7 @@ function getWidth (index:number){
               <v-card-actions class="d-flex justify-space-between">
                 <div>
                   <v-avatar size="36px">
-                    <v-img alt="Avatar" :src="blog.author.avatar"></v-img>
+                    <v-img alt="Avatar" :src="blog.author.avatar || AVATAR_PLACEHOLDER"></v-img>
 
                   </v-avatar>
                   {{ blog.author.name }}

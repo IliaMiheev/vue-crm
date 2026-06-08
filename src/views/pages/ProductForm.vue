@@ -11,7 +11,7 @@ import { MAX_IMAGE_SIZE_MB, useImageUpload } from '@/composables/useImageUpload'
 import { useProductColors } from '@/composables/useProductColors';
 import { PhotoIcon, PlusIcon, XIcon } from 'vue-tabler-icons';
 
-const AVATAR_PLACEHOLDER = '/src/assets/images/product/product-0.webp';
+const AVATAR_PLACEHOLDER = 'assets/images/product/product-0.webp';
 
 const route = useRoute();
 const router = useRouter();

@@ -1,9 +1,24 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, nativeImage } from 'electron';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 
 if (started) {
   app.quit();
+}
+
+/** Иконка рядом с main.js в .vite/build/ (копируется при сборке Vite). */
+function getWindowIcon() {
+  const candidates = [
+    path.join(__dirname, 'icon.ico'),
+    path.join(__dirname, 'it-logo-min.png'),
+    path.join(__dirname, '../src/icon.ico'),
+    path.join(__dirname, '../src/it-logo-min.png')
+  ];
+
+  for (const iconPath of candidates) {
+    const image = nativeImage.createFromPath(iconPath);
+    if (!image.isEmpty()) return image;
+  }
 }
 
 const createWindow = () => {
@@ -14,7 +29,7 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: width,
     height: height,
-    icon: './src/it-logo-min.png',
+    icon: getWindowIcon(),
     title: 'CRM на все случаи жизни',
     resizable: true,
     maximizable: true,

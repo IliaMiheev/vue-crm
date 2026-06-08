@@ -51,6 +51,8 @@ export default defineConfig({
     }
   },
   build: {
+    // outDir must live under electron-app/.vite — Forge packages only that folder into app.asar
+    outDir: path.join(__dirname, '.vite/renderer/main_window'),
     chunkSizeWarningLimit: 1024 * 1024,
     rollupOptions: {
       input: path.join(projectRoot, 'index.html')

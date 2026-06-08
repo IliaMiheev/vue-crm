@@ -15,7 +15,7 @@ export default {
             city: 'Salt Lake City',
             state: ' Utah',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-2.webp',
+            avatar: 'assets/images/avatar/avatar-2.webp',
             status: 'active',
             role: 'Hr Manager'
         },
@@ -30,7 +30,7 @@ export default {
             city: 'Madrid',
             state: ' Comunidad de Madrid',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-3.webp',
+            avatar: 'assets/images/avatar/avatar-3.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -45,7 +45,7 @@ export default {
             city: 'Melbourne',
             state: ' VIC',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-4.webp',
+            avatar: 'assets/images/avatar/avatar-4.webp',
             status: 'active',
             role: 'Sales Operator'
         },
@@ -60,7 +60,7 @@ export default {
             city: 'North Canton',
             state: ' Ohio',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-5.webp',
+            avatar: 'assets/images/avatar/avatar-5.webp',
             status: 'active',
             role: 'Sales Manager'
         },
@@ -75,7 +75,7 @@ export default {
             city: 'Sydney',
             state: ' NSW',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-6.webp',
+            avatar: 'assets/images/avatar/avatar-6.webp',
             status: 'active',
             role: 'Project Manager'
         },
@@ -90,7 +90,7 @@ export default {
             city: 'Queensland',
             state: ' NSW',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-7.webp',
+            avatar: 'assets/images/avatar/avatar-7.webp',
             status: 'active',
             role: 'Business Analyst'
         },
@@ -105,7 +105,7 @@ export default {
             city: 'Carson City',
             state: ' Nevada',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-8.webp',
+            avatar: 'assets/images/avatar/avatar-8.webp',
             status: 'active',
             role: 'Product Designer'
         },
@@ -120,7 +120,7 @@ export default {
             city: 'Ottawa',
             state: ' Ontario',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-9.webp',
+            avatar: 'assets/images/avatar/avatar-9.webp',
             status: 'locked',
             role: 'Market Manager'
         },
@@ -135,7 +135,7 @@ export default {
             city: 'Toronto',
             state: ' ON',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-10.webp',
+            avatar: 'assets/images/avatar/avatar-10.webp',
             status: 'active',
             role: 'General Manager'
         },
@@ -150,7 +150,7 @@ export default {
             city: 'San Francisco',
             state: ' California',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-11.webp',
+            avatar: 'assets/images/avatar/avatar-11.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -165,7 +165,7 @@ export default {
             city: 'Hong Kong',
             state: ' HK',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-12.webp',
+            avatar: 'assets/images/avatar/avatar-12.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -180,7 +180,7 @@ export default {
             city: 'Perth',
             state: ' WA',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-13.webp',
+            avatar: 'assets/images/avatar/avatar-13.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -195,7 +195,7 @@ export default {
             city: 'Paris',
             state: ' Paris',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-14.webp',
+            avatar: 'assets/images/avatar/avatar-14.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -210,7 +210,7 @@ export default {
             city: 'Milan',
             state: ' Milan',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-15.webp',
+            avatar: 'assets/images/avatar/avatar-15.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -225,7 +225,7 @@ export default {
             city: 'Frankfurt',
             state: ' Frankfurt',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-16.webp',
+            avatar: 'assets/images/avatar/avatar-16.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -240,7 +240,7 @@ export default {
             city: 'Sydney',
             state: ' NSW',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-17.webp',
+            avatar: 'assets/images/avatar/avatar-17.webp',
             status: 'locked',
             role: 'Sales Agent'
         },
@@ -255,7 +255,7 @@ export default {
             city: 'Queensland',
             state: ' NSW',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-18.webp',
+            avatar: 'assets/images/avatar/avatar-18.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -270,7 +270,7 @@ export default {
             city: 'Ottawa',
             state: ' Ontario',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-19.webp',
+            avatar: 'assets/images/avatar/avatar-19.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -285,7 +285,7 @@ export default {
             city: 'North Canton',
             state: ' Ohio',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-20.webp',
+            avatar: 'assets/images/avatar/avatar-20.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -300,7 +300,7 @@ export default {
             city: 'Sydney',
             state: ' NSW',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-21.webp',
+            avatar: 'assets/images/avatar/avatar-21.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -315,7 +315,7 @@ export default {
             city: 'Queensland',
             state: ' NSW',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-22.webp',
+            avatar: 'assets/images/avatar/avatar-22.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -330,7 +330,7 @@ export default {
             city: 'Carson City',
             state: ' Nevada',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-23.webp',
+            avatar: 'assets/images/avatar/avatar-23.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -345,7 +345,7 @@ export default {
             city: 'Ottawa',
             state: ' Ontario',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-24.webp',
+            avatar: 'assets/images/avatar/avatar-24.webp',
             status: 'active',
             role: 'Sales Agent'
         },
@@ -360,7 +360,7 @@ export default {
             city: 'Murray',
             state: ' Utah',
             isVerified: true,
-            avatar: '/assets/images/avatar/avatar-1.webp',
+            avatar: 'assets/images/avatar/avatar-1.webp',
             status: 'locked',
             role: 'Sales Leader'
         }
@@ -378,7 +378,7 @@ export default {
             state: 'Москва',
             country: 'Россия',
             hasItemInShoppingCart: true,
-            avatar: '/assets/images/customer/avatar-1.png',
+            avatar: 'assets/images/customer/avatar-1.png',
             membership: 'standard',
             rewards: 9
         },
@@ -394,7 +394,7 @@ export default {
             state: 'Санкт-Петербург',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-2.png',
+            avatar: 'assets/images/customer/avatar-2.png',
             membership: 'vip',
             rewards: 91
         },
@@ -410,7 +410,7 @@ export default {
             state: 'Свердловская область',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-3.png',
+            avatar: 'assets/images/customer/avatar-3.png',
             membership: 'vip',
             rewards: 21
         },
@@ -426,7 +426,7 @@ export default {
             state: 'Новосибирская область',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-4.png',
+            avatar: 'assets/images/customer/avatar-4.png',
             membership: 'vip',
             rewards: 45
         },
@@ -442,7 +442,7 @@ export default {
             state: 'Татарстан',
             country: 'Россия',
             hasItemInShoppingCart: true,
-            avatar: '/assets/images/customer/avatar-5.png',
+            avatar: 'assets/images/customer/avatar-5.png',
             membership: 'standard',
             rewards: 5
         },
@@ -458,7 +458,7 @@ export default {
             state: 'Челябинская область',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-6.png',
+            avatar: 'assets/images/customer/avatar-6.png',
             membership: 'vip',
             rewards: 71
         },
@@ -474,7 +474,7 @@ export default {
             state: 'Красноярский край',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-7.png',
+            avatar: 'assets/images/customer/avatar-7.png',
             membership: 'vip',
             rewards: 16
         },
@@ -490,7 +490,7 @@ export default {
             state: 'Ростовская область',
             country: 'Россия',
             hasItemInShoppingCart: true,
-            avatar: '/assets/images/customer/avatar-8.png',
+            avatar: 'assets/images/customer/avatar-8.png',
             membership: 'standard',
             rewards: 37
         },
@@ -506,7 +506,7 @@ export default {
             state: 'Омская область',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-9.png',
+            avatar: 'assets/images/customer/avatar-9.png',
             membership: 'vip',
             rewards: 201
         },
@@ -522,7 +522,7 @@ export default {
             state: 'Хабаровский край',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-10.png',
+            avatar: 'assets/images/customer/avatar-10.png',
             membership: 'vip',
             rewards: 52
         },
@@ -538,7 +538,7 @@ export default {
             state: 'Воронежская область',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-11.png',
+            avatar: 'assets/images/customer/avatar-11.png',
             membership: 'vip',
             rewards: 78
         },
@@ -554,7 +554,7 @@ export default {
             state: 'Самарская область',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-12.png',
+            avatar: 'assets/images/customer/avatar-12.png',
             membership: 'vip',
             rewards: 11
         },
@@ -570,7 +570,7 @@ export default {
             state: 'Москва',
             country: 'Россия',
             hasItemInShoppingCart: false,
-            avatar: '/assets/images/customer/avatar-0.webp',
+            avatar: 'assets/images/customer/avatar-0.webp',
             membership: 'vip',
             rewards: 89
         }
@@ -588,331 +588,331 @@ export default {
             title: 'Tesla Cybertruck-inspired camper trailer for Tesla fans who can’t just wait for the truck!',
             description:
                 'New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart',
-            coverUrl: '/assets/images/cover/cover-2.webp',
+            coverUrl: 'assets/images/cover/cover-2.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '04/09/2024',
-            author: { name: 'Eloise Ebert', avatar: '/assets/images/avatar/avatar-2.webp' }
+            author: { name: 'Eloise Ebert', avatar: 'assets/images/avatar/avatar-2.webp' }
         },
         {
             id: '2',
             title: 'Designify Agency Landing Page Design',
             description:
                 'Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals',
-            coverUrl: '/assets/images/cover/cover-3.webp',
+            coverUrl: 'assets/images/cover/cover-3.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '09/12/2023',
-            author: { name: 'Teresa Luettgen', avatar: '/assets/images/avatar/avatar-3.webp' }
+            author: { name: 'Teresa Luettgen', avatar: 'assets/images/avatar/avatar-3.webp' }
         },
         {
             id: '3',
             title: '✨What is Done is Done ✨',
             description: 'The Football Is Good For Training And Recreational Purposes',
-            coverUrl: '/assets/images/cover/cover-4.webp',
+            coverUrl: 'assets/images/cover/cover-4.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '01/01/2024',
-            author: { name: 'Salvador Mayert', avatar: '/assets/images/avatar/avatar-4.webp' }
+            author: { name: 'Salvador Mayert', avatar: 'assets/images/avatar/avatar-4.webp' }
         },
         {
             id: '4',
             title: 'Fresh Prince',
             description:
                 'New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016',
-            coverUrl: '/assets/images/cover/cover-5.webp',
+            coverUrl: 'assets/images/cover/cover-5.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '04/23/2024',
-            author: { name: 'Dr. Guadalupe Rath', avatar: '/assets/images/avatar/avatar-5.webp' }
+            author: { name: 'Dr. Guadalupe Rath', avatar: 'assets/images/avatar/avatar-5.webp' }
         },
         {
             id: '5',
             title: 'Six Socks Studio',
             description:
                 'Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals',
-            coverUrl: '/assets/images/cover/cover-6.webp',
+            coverUrl: 'assets/images/cover/cover-6.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '02/29/2024',
-            author: { name: 'Kelvin Pouros', avatar: '/assets/images/avatar/avatar-6.webp' }
+            author: { name: 'Kelvin Pouros', avatar: 'assets/images/avatar/avatar-6.webp' }
         },
         {
             id: '6',
             title: 'vincenzo de cotiis’ crossing over showcases a research on contamination',
             description: 'Carbonite web goalkeeper gloves are ergonomically designed to give easy fit',
-            coverUrl: '/assets/images/cover/cover-7.webp',
+            coverUrl: 'assets/images/cover/cover-7.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '05/14/2024',
-            author: { name: 'Thelma Langworth', avatar: '/assets/images/avatar/avatar-7.webp' }
+            author: { name: 'Thelma Langworth', avatar: 'assets/images/avatar/avatar-7.webp' }
         },
         {
             id: '7',
             title: 'Simple, Great Looking Animations in Your Project | Video Tutorial',
             description:
                 'The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design',
-            coverUrl: '/assets/images/cover/cover-8.webp',
+            coverUrl: 'assets/images/cover/cover-8.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '01/13/2024',
-            author: { name: 'Kristen Wunsch', avatar: '/assets/images/avatar/avatar-8.webp' }
+            author: { name: 'Kristen Wunsch', avatar: 'assets/images/avatar/avatar-8.webp' }
         },
         {
             id: '8',
             title: '40 Free Serif Fonts for Digital Designers',
             description:
                 'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-            coverUrl: '/assets/images/cover/cover-9.webp',
+            coverUrl: 'assets/images/cover/cover-9.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '06/22/2024',
-            author: { name: 'Steve Welch', avatar: '/assets/images/avatar/avatar-9.webp' }
+            author: { name: 'Steve Welch', avatar: 'assets/images/avatar/avatar-9.webp' }
         },
         {
             id: '9',
             title: 'Examining the Evolution of the Typical Web Design Client',
             description:
                 'The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive',
-            coverUrl: '/assets/images/cover/cover-10.webp',
+            coverUrl: 'assets/images/cover/cover-10.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '10/05/2023',
-            author: { name: 'Brian Jacobs', avatar: '/assets/images/avatar/avatar-10.webp' }
+            author: { name: 'Brian Jacobs', avatar: 'assets/images/avatar/avatar-10.webp' }
         },
         {
             id: '10',
             title: 'Katie Griffin loves making that homey art',
             description:
                 'The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive',
-            coverUrl: '/assets/images/cover/cover-11.webp',
+            coverUrl: 'assets/images/cover/cover-11.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '07/11/2024',
-            author: { name: 'Lillie Schultz', avatar: '/assets/images/avatar/avatar-11.webp' }
+            author: { name: 'Lillie Schultz', avatar: 'assets/images/avatar/avatar-11.webp' }
         },
         {
             id: '11',
             title: 'The American Dream retold through mid-century railroad graphics',
             description:
                 'The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design',
-            coverUrl: '/assets/images/cover/cover-12.webp',
+            coverUrl: 'assets/images/cover/cover-12.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '05/22/2024',
-            author: { name: 'Mr. Conrad Spinka', avatar: '/assets/images/avatar/avatar-12.webp' }
+            author: { name: 'Mr. Conrad Spinka', avatar: 'assets/images/avatar/avatar-12.webp' }
         },
         {
             id: '12',
             title: 'Illustration System Design',
             description:
                 'New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart',
-            coverUrl: '/assets/images/cover/cover-13.webp',
+            coverUrl: 'assets/images/cover/cover-13.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '03/29/2024',
-            author: { name: 'Charlene Krajcik', avatar: '/assets/images/avatar/avatar-13.webp' }
+            author: { name: 'Charlene Krajcik', avatar: 'assets/images/avatar/avatar-13.webp' }
         },
         {
             id: '13',
             title: 'CarZio-Delivery Driver App SignIn/SignUp',
             description: "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-            coverUrl: '/assets/images/cover/cover-14.webp',
+            coverUrl: 'assets/images/cover/cover-14.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '08/29/2023',
-            author: { name: 'Kerry Kuhlman', avatar: '/assets/images/avatar/avatar-14.webp' }
+            author: { name: 'Kerry Kuhlman', avatar: 'assets/images/avatar/avatar-14.webp' }
         },
         {
             id: '14',
             title: 'How to create a client-serverless Jamstack app using Netlify, Gatsby and Fauna',
             description:
                 'New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart',
-            coverUrl: '/assets/images/cover/cover-15.webp',
+            coverUrl: 'assets/images/cover/cover-15.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '11/19/2023',
-            author: { name: 'Betty Hammes', avatar: '/assets/images/avatar/avatar-15.webp' }
+            author: { name: 'Betty Hammes', avatar: 'assets/images/avatar/avatar-15.webp' }
         },
         {
             id: '15',
             title: 'Tylko Organise effortlessly -3D & Motion Design',
             description:
                 'Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals',
-            coverUrl: '/assets/images/cover/cover-16.webp',
+            coverUrl: 'assets/images/cover/cover-16.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '10/24/2023',
-            author: { name: 'Tony Paucek PhD', avatar: '/assets/images/avatar/avatar-16.webp' }
+            author: { name: 'Tony Paucek PhD', avatar: 'assets/images/avatar/avatar-16.webp' }
         },
         {
             id: '16',
             title: 'RAYO ?? A expanded visual arts festival identity',
             description:
                 'Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals',
-            coverUrl: '/assets/images/cover/cover-17.webp',
+            coverUrl: 'assets/images/cover/cover-17.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '12/02/2023',
-            author: { name: 'Sherri Davis', avatar: '/assets/images/avatar/avatar-17.webp' }
+            author: { name: 'Sherri Davis', avatar: 'assets/images/avatar/avatar-17.webp' }
         },
         {
             id: '17',
             title: 'Anthony Burrill and Wired mag’s Andrew Diprose discuss how they made January’s Change Everything cover',
             description:
                 'The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients',
-            coverUrl: '/assets/images/cover/cover-18.webp',
+            coverUrl: 'assets/images/cover/cover-18.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '02/13/2024',
-            author: { name: 'Angel Rolfson-Kulas', avatar: '/assets/images/avatar/avatar-18.webp' }
+            author: { name: 'Angel Rolfson-Kulas', avatar: 'assets/images/avatar/avatar-18.webp' }
         },
         {
             id: '18',
             title: 'Inside the Mind of Samuel Day',
             description: "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-            coverUrl: '/assets/images/cover/cover-19.webp',
+            coverUrl: 'assets/images/cover/cover-19.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '09/19/2023',
-            author: { name: 'Dr. Lee Doyle-Grant', avatar: '/assets/images/avatar/avatar-19.webp' }
+            author: { name: 'Dr. Lee Doyle-Grant', avatar: 'assets/images/avatar/avatar-19.webp' }
         },
         {
             id: '19',
             title: 'Portfolio Review: Is This Portfolio Too Creative?',
             description:
                 'New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016',
-            coverUrl: '/assets/images/cover/cover-20.webp',
+            coverUrl: 'assets/images/cover/cover-20.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '04/17/2024',
-            author: { name: 'Cheryl Romaguera', avatar: '/assets/images/avatar/avatar-20.webp' }
+            author: { name: 'Cheryl Romaguera', avatar: 'assets/images/avatar/avatar-20.webp' }
         },
         {
             id: '20',
             title: 'Akkers van Margraten',
             description:
                 'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-            coverUrl: '/assets/images/cover/cover-21.webp',
+            coverUrl: 'assets/images/cover/cover-21.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '12/18/2023',
-            author: { name: 'Billy Braun', avatar: '/assets/images/avatar/avatar-21.webp' }
+            author: { name: 'Billy Braun', avatar: 'assets/images/avatar/avatar-21.webp' }
         },
         {
             id: '21',
             title: 'Gradient Ticket icon',
             description:
                 'Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support',
-            coverUrl: '/assets/images/cover/cover-22.webp',
+            coverUrl: 'assets/images/cover/cover-22.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '06/27/2024',
-            author: { name: 'Adam Trantow', avatar: '/assets/images/avatar/avatar-22.webp' }
+            author: { name: 'Adam Trantow', avatar: 'assets/images/avatar/avatar-22.webp' }
         },
         {
             id: '22',
             title: 'Here’s a Dyson motorcycle concept that doesn’t ‘suck’!',
             description: 'The Football Is Good For Training And Recreational Purposes',
-            coverUrl: '/assets/images/cover/cover-23.webp',
+            coverUrl: 'assets/images/cover/cover-23.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '10/19/2023',
-            author: { name: 'Brandon Von', avatar: '/assets/images/avatar/avatar-23.webp' }
+            author: { name: 'Brandon Von', avatar: 'assets/images/avatar/avatar-23.webp' }
         },
         {
             id: '23',
             title: 'How to Animate a SVG with border-image',
             description:
                 'The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive',
-            coverUrl: '/assets/images/cover/cover-24.webp',
+            coverUrl: 'assets/images/cover/cover-24.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '08/09/2024',
-            author: { name: 'Willis Ankunding', avatar: '/assets/images/avatar/avatar-24.webp' }
+            author: { name: 'Willis Ankunding', avatar: 'assets/images/avatar/avatar-24.webp' }
         },
         {
             id: '24',
             title: 'The American Dream retold through mid-century railroad graphics',
             description:
                 'The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design',
-            coverUrl: '/assets/images/cover/cover-25.webp',
+            coverUrl: 'assets/images/cover/cover-25.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
-            author: { avatar: '/assets/images/avatar/avatar-25.webp' }
+            author: { avatar: 'assets/images/avatar/avatar-25.webp' }
         },
         {
             id: '25',
             title: 'Katie Griffin loves making that homey art',
             description:
                 'The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive',
-            coverUrl: '/assets/images/cover/cover-26.webp',
+            coverUrl: 'assets/images/cover/cover-26.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
-            author: { avatar: '/assets/images/avatar/avatar-25.webp' }
+            author: { avatar: 'assets/images/avatar/avatar-25.webp' }
         },
         {
             id: '26',
             title: 'Whiteboard Templates By Industry Leaders',
             description:
                 'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-            coverUrl: '/assets/images/cover/cover-1.webp',
+            coverUrl: 'assets/images/cover/cover-1.webp',
             totalViews: 8829,
             totalComments: 7977,
             totalShares: 8556,
             totalFavorites: 8870,
             postedAt: '11/08/2023',
-            author: { name: 'Billy Stoltenberg', avatar: '/assets/images/avatar/avatar-1.webp' }
+            author: { name: 'Billy Stoltenberg', avatar: 'assets/images/avatar/avatar-1.webp' }
         }
     ],
     orders: [
@@ -929,14 +929,14 @@ export default {
                     category: 'Лёгкая атлетика',
                     status: 'hot',
                     price: 4590,
-                    imageUri: '/assets/images/product/product-10.webp'
+                    imageUri: 'assets/images/product/product-10.webp'
                 },
                 {
                     id: 10,
                     name: 'Кроссовки Sisterhood Run 7',
                     category: 'Лёгкая атлетика',
                     price: 5190,
-                    imageUri: '/assets/images/product/product-11.webp'
+                    imageUri: 'assets/images/product/product-11.webp'
                 }
             ],
             billingDate: '2025-08-08',
@@ -960,7 +960,7 @@ export default {
                     category: 'Баскетбол',
                     status: 'hot',
                     price: 6990,
-                    imageUri: '/assets/images/product/product-1.webp'
+                    imageUri: 'assets/images/product/product-1.webp'
                 },
                 {
                     id: 2,
@@ -968,7 +968,7 @@ export default {
                     category: 'Баскетбол',
                     status: 'hot',
                     price: 8990,
-                    imageUri: '/assets/images/product/product-3.webp'
+                    imageUri: 'assets/images/product/product-3.webp'
                 }
             ],
             amount: 15980,
@@ -994,7 +994,7 @@ export default {
                     name: 'Кроссовки беговые Stride Pro',
                     category: 'Бег',
                     price: 5490,
-                    imageUri: '/assets/images/product/product-2.webp'
+                    imageUri: 'assets/images/product/product-2.webp'
                 },
                 {
                     id: 2,
@@ -1002,7 +1002,7 @@ export default {
                     category: 'Баскетбол',
                     status: 'hot',
                     price: 8990,
-                    imageUri: '/assets/images/product/product-3.webp'
+                    imageUri: 'assets/images/product/product-3.webp'
                 },
                 {
                     id: 3,
@@ -1010,7 +1010,7 @@ export default {
                     category: 'Лёгкая атлетика',
                     status: 'new',
                     price: 4290,
-                    imageUri: '/assets/images/product/product-4.webp'
+                    imageUri: 'assets/images/product/product-4.webp'
                 },
                 {
                     id: 4,
@@ -1018,7 +1018,7 @@ export default {
                     category: 'Фитнес',
                     status: 'hot',
                     price: 3790,
-                    imageUri: '/assets/images/product/product-5.webp'
+                    imageUri: 'assets/images/product/product-5.webp'
                 }
             ],
             amount: 22560,
@@ -1045,7 +1045,7 @@ export default {
                     category: 'Лёгкая атлетика',
                     status: 'new',
                     price: 4290,
-                    imageUri: '/assets/images/product/product-4.webp'
+                    imageUri: 'assets/images/product/product-4.webp'
                 },
                 {
                     id: 4,
@@ -1053,14 +1053,14 @@ export default {
                     category: 'Фитнес',
                     status: 'hot',
                     price: 3790,
-                    imageUri: '/assets/images/product/product-5.webp'
+                    imageUri: 'assets/images/product/product-5.webp'
                 },
                 {
                     id: 12,
                     name: 'Кроссовки Retro Blazer Low',
                     category: 'Лёгкая атлетика',
                     price: 6490,
-                    imageUri: '/assets/images/product/product-13.webp'
+                    imageUri: 'assets/images/product/product-13.webp'
                 }
             ],
             amount: 14570,
@@ -1086,14 +1086,14 @@ export default {
                     name: 'Кроссовки Retro Blazer Low',
                     category: 'Лёгкая атлетика',
                     price: 6490,
-                    imageUri: '/assets/images/product/product-13.webp'
+                    imageUri: 'assets/images/product/product-13.webp'
                 },
                 {
                     id: 13,
                     name: 'Кроссовки SuperRep Surge',
                     category: 'Фитнес',
                     price: 3490,
-                    imageUri: '/assets/images/product/product-14.webp'
+                    imageUri: 'assets/images/product/product-14.webp'
                 }
             ],
             amount: 9980,
@@ -1120,7 +1120,7 @@ export default {
                     category: 'Баскетбол',
                     status: 'new',
                     price: 7490,
-                    imageUri: '/assets/images/product/product-8.webp'
+                    imageUri: 'assets/images/product/product-8.webp'
                 },
                 {
                     id: 11,
@@ -1128,7 +1128,7 @@ export default {
                     category: 'Баскетбол',
                     status: 'new',
                     price: 5990,
-                    imageUri: '/assets/images/product/product-12.webp'
+                    imageUri: 'assets/images/product/product-12.webp'
                 }
             ],
             amount: 13480,
@@ -1154,7 +1154,7 @@ export default {
                     name: 'Шиповки Track Elite',
                     category: 'Лёгкая атлетика',
                     price: 6290,
-                    imageUri: '/assets/images/product/product-6.webp'
+                    imageUri: 'assets/images/product/product-6.webp'
                 },
                 {
                     id: 7,
@@ -1162,7 +1162,7 @@ export default {
                     category: 'Баскетбол',
                     status: 'new',
                     price: 7490,
-                    imageUri: '/assets/images/product/product-8.webp'
+                    imageUri: 'assets/images/product/product-8.webp'
                 }
             ],
             amount: 13780,
@@ -1188,7 +1188,7 @@ export default {
                     name: 'Кроссовки Air Cushion Max',
                     category: 'Баскетбол',
                     price: 9990,
-                    imageUri: '/assets/images/product/product-7.webp'
+                    imageUri: 'assets/images/product/product-7.webp'
                 },
                 {
                     id: 7,
@@ -1196,7 +1196,7 @@ export default {
                     category: 'Баскетбол',
                     status: 'new',
                     price: 7490,
-                    imageUri: '/assets/images/product/product-8.webp'
+                    imageUri: 'assets/images/product/product-8.webp'
                 }
             ],
             amount: 17480,
@@ -1221,7 +1221,7 @@ export default {
                     category: 'Баскетбол',
                     status: 'new',
                     price: 5990,
-                    imageUri: '/assets/images/product/product-12.webp'
+                    imageUri: 'assets/images/product/product-12.webp'
                 }
             ],
             amount: 5990,
@@ -1247,7 +1247,7 @@ export default {
                     name: 'Баскетбольные Pro Lift 35',
                     category: 'Баскетбол',
                     price: 11990,
-                    imageUri: '/assets/images/product/product-9.webp'
+                    imageUri: 'assets/images/product/product-9.webp'
                 }
             ],
             amount: 11990,
@@ -1274,14 +1274,14 @@ export default {
                     category: 'Фитнес',
                     status: 'new',
                     price: 4290,
-                    imageUri: '/assets/images/product/product-15.webp'
+                    imageUri: 'assets/images/product/product-15.webp'
                 },
                 {
                     id: 8,
                     name: 'Баскетбольные Pro Lift 35',
                     category: 'Баскетбол',
                     price: 11990,
-                    imageUri: '/assets/images/product/product-9.webp'
+                    imageUri: 'assets/images/product/product-9.webp'
                 }
             ],
             amount: 16280,
@@ -1305,7 +1305,7 @@ export default {
             name: 'Кроссовки беговые Stride Pro',
             unitInStock: 24,
             price: 5490,
-            imageUri: '/assets/images/product/product-2.webp',
+            imageUri: 'assets/images/product/product-2.webp',
             colors: ['#000000', '#FF4842', '#1890FF', '#FFFFFF'],
             status: '',
             category: 'Бег'
@@ -1315,7 +1315,7 @@ export default {
             name: 'Кроссовки баскетбольные Court Master',
             unitInStock: 18,
             price: 8990,
-            imageUri: '/assets/images/product/product-3.webp',
+            imageUri: 'assets/images/product/product-3.webp',
             colors: ['#FFFFFF', '#FF4842', '#1890FF', '#FFC0CB'],
             status: 'hot',
             category: 'Баскетбол'
@@ -1325,7 +1325,7 @@ export default {
             name: 'Кроссовки лёгкие Sprint Classic',
             unitInStock: 32,
             price: 4290,
-            imageUri: '/assets/images/product/product-4.webp',
+            imageUri: 'assets/images/product/product-4.webp',
             colors: ['#FFC0CB', '#FF4842', '#1890FF'],
             status: 'new',
             category: 'Лёгкая атлетика'
@@ -1335,7 +1335,7 @@ export default {
             name: 'Кроссовки для зала Fit Pulse',
             unitInStock: 41,
             price: 3790,
-            imageUri: '/assets/images/product/product-5.webp',
+            imageUri: 'assets/images/product/product-5.webp',
             colors: ['#00AB55', '#FFFFFF', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'hot',
             category: 'Фитнес'
@@ -1345,7 +1345,7 @@ export default {
             name: 'Шиповки Track Elite',
             unitInStock: 15,
             price: 6290,
-            imageUri: '/assets/images/product/product-6.webp',
+            imageUri: 'assets/images/product/product-6.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
             category: 'Лёгкая атлетика'
@@ -1355,7 +1355,7 @@ export default {
             name: 'Кроссовки Air Cushion Max',
             unitInStock: 12,
             price: 9990,
-            imageUri: '/assets/images/product/product-7.webp',
+            imageUri: 'assets/images/product/product-7.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
             category: 'Баскетбол'
@@ -1365,7 +1365,7 @@ export default {
             name: 'Кроссовки Urban Jump High',
             unitInStock: 20,
             price: 7490,
-            imageUri: '/assets/images/product/product-8.webp',
+            imageUri: 'assets/images/product/product-8.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
             category: 'Баскетбол'
@@ -1375,7 +1375,7 @@ export default {
             name: 'Баскетбольные Pro Lift 35',
             unitInStock: 8,
             price: 11990,
-            imageUri: '/assets/images/product/product-9.webp',
+            imageUri: 'assets/images/product/product-9.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
             category: 'Баскетбол'
@@ -1385,7 +1385,7 @@ export default {
             name: 'Кроссовки Waffle Trail',
             unitInStock: 27,
             price: 4590,
-            imageUri: '/assets/images/product/product-10.webp',
+            imageUri: 'assets/images/product/product-10.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#94D82D', '#FFC107'],
             status: 'hot',
             category: 'Лёгкая атлетика'
@@ -1395,7 +1395,7 @@ export default {
             name: 'Кроссовки Sisterhood Run 7',
             unitInStock: 22,
             price: 5190,
-            imageUri: '/assets/images/product/product-11.webp',
+            imageUri: 'assets/images/product/product-11.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#FFC107'],
             status: '',
             category: 'Лёгкая атлетика'
@@ -1405,7 +1405,7 @@ export default {
             name: 'Баскетбольные Zoom Court',
             unitInStock: 16,
             price: 5990,
-            imageUri: '/assets/images/product/product-12.webp',
+            imageUri: 'assets/images/product/product-12.webp',
             colors: ['#00AB55', '#000000', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
             category: 'Баскетбол'
@@ -1415,7 +1415,7 @@ export default {
             name: 'Кроссовки Retro Blazer Low',
             unitInStock: 19,
             price: 6490,
-            imageUri: '/assets/images/product/product-13.webp',
+            imageUri: 'assets/images/product/product-13.webp',
             colors: ['#00AB55', '#000000', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
             category: 'Лёгкая атлетика'
@@ -1425,7 +1425,7 @@ export default {
             name: 'Кроссовки SuperRep Surge',
             unitInStock: 35,
             price: 3490,
-            imageUri: '/assets/images/product/product-14.webp',
+            imageUri: 'assets/images/product/product-14.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FFC107'],
             status: '',
             category: 'Фитнес'
@@ -1435,7 +1435,7 @@ export default {
             name: 'Кроссовки BB Next Gen',
             unitInStock: 28,
             price: 4290,
-            imageUri: '/assets/images/product/product-15.webp',
+            imageUri: 'assets/images/product/product-15.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
             category: 'Фитнес'
@@ -1445,7 +1445,7 @@ export default {
             name: 'Классические кроссовки Force LX',
             unitInStock: 14,
             price: 7990,
-            imageUri: '/assets/images/product/product-16.webp',
+            imageUri: 'assets/images/product/product-16.webp',
             colors: ['#00AB55', '#000000', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
             category: 'Баскетбол'
@@ -1455,7 +1455,7 @@ export default {
             name: 'Кроссовки Shadow Edition',
             unitInStock: 21,
             price: 5490,
-            imageUri: '/assets/images/product/product-17.webp',
+            imageUri: 'assets/images/product/product-17.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#94D82D', '#FFC107'],
             status: 'new',
             category: 'Баскетбол'
@@ -1465,7 +1465,7 @@ export default {
             name: 'Кроссовки Tempo Next',
             unitInStock: 17,
             price: 8490,
-            imageUri: '/assets/images/product/product-18.webp',
+            imageUri: 'assets/images/product/product-18.webp',
             colors: ['#00AB55', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
             category: 'Фитнес'
@@ -1475,7 +1475,7 @@ export default {
             name: 'Кроссовки Street Force LX',
             unitInStock: 26,
             price: 3990,
-            imageUri: '/assets/images/product/product-19.webp',
+            imageUri: 'assets/images/product/product-19.webp',
             colors: ['#00AB55', '#000000', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
             category: 'Баскетбол'
@@ -1485,7 +1485,7 @@ export default {
             name: 'Кроссовки Shadow Run',
             unitInStock: 23,
             price: 4790,
-            imageUri: '/assets/images/product/product-20.webp',
+            imageUri: 'assets/images/product/product-20.webp',
             colors: ['#00AB55', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
             category: 'Лёгкая атлетика'
@@ -1495,7 +1495,7 @@ export default {
             name: 'Кроссовки Tempo Zoom',
             unitInStock: 18,
             price: 5690,
-            imageUri: '/assets/images/product/product-21.webp',
+            imageUri: 'assets/images/product/product-21.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#1890FF', '#94D82D', '#FFC107'],
             status: '',
             category: 'Баскетбол'
@@ -1505,7 +1505,7 @@ export default {
             name: 'Кроссовки D-Break Type',
             unitInStock: 20,
             price: 6290,
-            imageUri: '/assets/images/product/product-22.webp',
+            imageUri: 'assets/images/product/product-22.webp',
             colors: ['#00AB55', '#000000', '#FFFFFF', '#1890FF', '#94D82D', '#FFC107'],
             status: 'new',
             category: 'Лёгкая атлетика'
@@ -1515,7 +1515,7 @@ export default {
             name: 'Кроссовки Air Max Up',
             unitInStock: 11,
             price: 8990,
-            imageUri: '/assets/images/product/product-23.webp',
+            imageUri: 'assets/images/product/product-23.webp',
             colors: ['#FF4842', '#1890FF', '#94D82D'],
             status: '',
             category: 'Бег'
@@ -1525,7 +1525,7 @@ export default {
             name: 'Кроссовки React 270 Flow',
             unitInStock: 13,
             price: 9490,
-            imageUri: '/assets/images/product/product-24.webp',
+            imageUri: 'assets/images/product/product-24.webp',
             colors: ['#1890FF', '#1890FF', '#94D82D'],
             status: '',
             category: 'Баскетбол'
@@ -1535,7 +1535,7 @@ export default {
             name: 'Кроссовки Classic Force',
             unitInStock: 25,
             price: 6990,
-            imageUri: '/assets/images/product/product-1.webp',
+            imageUri: 'assets/images/product/product-1.webp',
             colors: ['#00AB55', '#000000', '#FF4842', '#1890FF', '#FFFFFF'],
             status: 'hot',
             category: 'Баскетбол'

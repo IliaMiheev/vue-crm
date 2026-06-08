@@ -1,3 +1,4 @@
+const path = require('node:path');
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
@@ -5,14 +6,16 @@ module.exports = {
   packagerConfig: {
     asar: true,
     name: 'Vue CRM',
-    executableName: 'vue-crm'
+    executableName: 'vue-crm',
+    icon: path.join(__dirname, 'src', 'icon')
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        name: 'vue-crm'
+        name: 'vue-crm',
+        setupIcon: path.join(__dirname, 'src', 'icon.ico')
       }
     },
     {

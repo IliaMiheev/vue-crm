@@ -16,7 +16,7 @@ import {
   ruPhoneRule
 } from '@/utils/helpers/ru-phone';
 
-const AVATAR_PLACEHOLDER = '/src/assets/images/customer/avatar-0.webp';
+const AVATAR_PLACEHOLDER = 'assets/images/customer/avatar-0.webp';
 
 const route = useRoute();
 const router = useRouter();
