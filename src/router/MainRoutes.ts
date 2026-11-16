@@ -49,8 +49,13 @@ const MainRoutes = {
     },
     {
       name: 'Edit Product',
-      path: '/product/:id',
+      path: '/product/:id/edit',
       component: () => import('@/views/pages/ProductForm.vue')
+    },
+    {
+      name: 'Product Profile',
+      path: '/product/:id',
+      component: () => import('@/views/pages/ProductProfile.vue')
     },
     {
       name: 'Order',

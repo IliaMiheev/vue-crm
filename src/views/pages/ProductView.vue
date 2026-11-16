@@ -16,7 +16,11 @@ const notice = ref(false);
 const selectedId = ref('');
 
 function editProduct(id: string) {
-  router.replace({ path: `/product/${id}` });
+  router.push({ path: `/product/${id}/edit` });
+}
+
+function openProduct(id: string) {
+  router.push({ path: `/product/${id}` });
 }
 
 function deleteProduct(id: string) {
@@ -66,7 +70,7 @@ function onCreate() {
       <v-divider class="mb-10" />
       <v-row>
         <v-col cols="12" md="4" sm="6" v-for="(product, index) in filteredData" :key="index">
-          <v-card variant="elevated" class="mx-auto ma-5" max-width="360">
+          <v-card variant="elevated" class="mx-auto ma-5 cursor-pointer" max-width="360" @click="openProduct(product.id)">
             <v-img class="product-img align-end text-primary b-r-25" height="250" :src="product.imageUri" cover> </v-img>
             <v-card-title class="text-h3"> {{ product.name }} </v-card-title>
 
@@ -88,14 +92,14 @@ function onCreate() {
                 variant="outlined"
                 text="Изменить"
                 size="small"
-                @click="editProduct(product.id)"
+                @click.stop="editProduct(product.id)"
               ></v-btn>
               <v-btn
                 color="primary"
                 variant="plain"
                 text="Удалить"
                 size="large"
-                @click="deleteProduct(product.id)"
+                @click.stop="deleteProduct(product.id)"
               ></v-btn>
             </v-card-actions>
           </v-card>
