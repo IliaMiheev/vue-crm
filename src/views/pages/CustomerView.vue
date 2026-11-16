@@ -7,6 +7,7 @@ import ConfirmDialog from '@/components/shared/ConfirmDialog.vue';
 import NotificationBar from '@/components/shared/NotificeBar.vue';
 import { router } from '@/router';
 import { isApiSuccess } from '@/utils/helpers/route-params';
+import type { Customer } from '@/types';
 
 const headers = [
   { title: '', key: 'avatar', algin: 'start' },
@@ -29,7 +30,20 @@ const selectedId = ref('');
 const AVATAR_PLACEHOLDER = 'assets/images/customer/avatar-0.webp';
 
 function editCustomer(id: string) {
-  router.replace({ path: `/customer/${id}` });
+  router.push({ path: `/customer/${id}/edit` });
+}
+
+function customerFromRow(row: { item?: Customer & { raw?: Customer } }) {
+  const item = row?.item;
+  if (!item) return undefined;
+  return item.raw ?? item;
+}
+
+function onRowClick(_event: Event, row: { item?: Customer & { raw?: Customer } }) {
+  const customer = customerFromRow(row);
+  if (customer?.id) {
+    router.push({ path: `/customer/${customer.id}` });
+  }
 }
 
 function deleteCustomer(id: string) {
@@ -74,7 +88,13 @@ function onCreate() {
       <v-progress-linear color="secondary" height="6" indeterminate rounded></v-progress-linear>
     </div>
     <div v-if="!customerStore.loading">
-      <v-data-table :headers="headers" :items="filteredData" :search="search">
+      <v-data-table
+        :headers="headers"
+        :items="filteredData"
+        :search="search"
+        :row-props="() => ({ class: 'cursor-pointer' })"
+        @click:row="onRowClick"
+      >
         <template v-slot:top>
           <v-text-field v-model="search" variant="solo-filled" class="pa-2" label="Фильтровать"></v-text-field>
         </template>
@@ -121,8 +141,8 @@ function onCreate() {
         </template>
         <template v-slot:item.id="{ value }">
           <div class="d-flex ga-6 p-r-5 justify-end">
-            <v-icon color="secondary" icon="$edit" size="x-large" @click="editCustomer(value)"></v-icon>
-            <v-icon color="disabled" icon="$delete" size="x-large" @click="deleteCustomer(value)"></v-icon>
+            <v-icon color="secondary" icon="$edit" size="x-large" @click.stop="editCustomer(value)"></v-icon>
+            <v-icon color="disabled" icon="$delete" size="x-large" @click.stop="deleteCustomer(value)"></v-icon>
           </div>
         </template>
       </v-data-table>

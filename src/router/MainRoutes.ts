@@ -29,8 +29,13 @@ const MainRoutes = {
     },
     {
       name: 'Edit Customer',
-      path: '/customer/:id',
+      path: '/customer/:id/edit',
       component: () => import('@/views/pages/CustomerForm.vue')
+    },
+    {
+      name: 'Customer Profile',
+      path: '/customer/:id',
+      component: () => import('@/views/pages/CustomerProfile.vue')
     },
     {
       name: 'Product',
