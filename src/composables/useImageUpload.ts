@@ -2,11 +2,17 @@ import { computed, ref, type Ref } from 'vue';
 
 export const MAX_IMAGE_SIZE_MB = 2;
 
+function toPublicUrl(src?: string) {
+  if (!src) return '';
+  if (/^(?:\/|data:|blob:|https?:)/.test(src)) return src;
+  return `/${src}`;
+}
+
 export function useImageUpload(imageUri: Ref<string | undefined>, placeholder: string) {
   const imageFile = ref<File[]>([]);
   const imageError = ref('');
 
-  const previewImage = computed(() => imageUri.value || placeholder);
+  const previewImage = computed(() => toPublicUrl(imageUri.value) || toPublicUrl(placeholder));
   const hasCustomImage = computed(() => !!imageUri.value);
 
   function onImageSelected(files: File | File[] | null) {
