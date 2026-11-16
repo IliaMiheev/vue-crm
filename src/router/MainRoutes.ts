@@ -64,8 +64,13 @@ const MainRoutes = {
     },
     {
       name: 'Edit Order',
-      path: '/order/:id',
+      path: '/order/:id/edit',
       component: () => import('@/views/pages/OrderForm.vue')
+    },
+    {
+      name: 'Order Profile',
+      path: '/order/:id',
+      component: () => import('@/views/pages/OrderProfile.vue')
     },
     {
       name: 'Blog',

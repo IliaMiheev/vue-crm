@@ -9,6 +9,7 @@ import { router } from '@/router';
 import { formatDeliveryStatus } from '@/utils/locales/labels';
 import { formatRuShortDate } from '@/utils/locales/format';
 import { isApiSuccess } from '@/utils/helpers/route-params';
+import type { Order } from '@/types';
 
 const headers = [
   { title: '№ ссылки', key: 'reference', algin: 'start' },
@@ -32,7 +33,20 @@ function onCreate() {
 }
 
 function editOrder(id: string) {
-  router.replace({ path: `/order/${id}` });
+  router.push({ path: `/order/${id}/edit` });
+}
+
+function orderFromRow(row: { item?: Order & { raw?: Order } }) {
+  const item = row?.item;
+  if (!item) return undefined;
+  return item.raw ?? item;
+}
+
+function onRowClick(_event: Event, row: { item?: Order & { raw?: Order } }) {
+  const order = orderFromRow(row);
+  if (order?.id) {
+    router.push({ path: `/order/${order.id}` });
+  }
 }
 
 function deleteOrder(id: string) {
@@ -70,7 +84,7 @@ function getColor(deliveryStatus: string): string {
   switch (deliveryStatus) {
     case 'delivered':
       return 'success';
-    case 'packaging':
+    case 'packing':
       return 'error';
     case 'customs-clearance':
       return 'info';
@@ -88,7 +102,14 @@ function getColor(deliveryStatus: string): string {
       <v-progress-linear color="secondary" height="6" indeterminate rounded></v-progress-linear>
     </div>
     <div v-if="!orderStore.loading">
-      <v-data-table :headers="headers" :items="filteredData" :search="search" show-expand>
+      <v-data-table
+        :headers="headers"
+        :items="filteredData"
+        :search="search"
+        show-expand
+        :row-props="() => ({ class: 'cursor-pointer' })"
+        @click:row="onRowClick"
+      >
         <template v-slot:top>
           <v-text-field v-model="search" variant="solo-filled" class="pa-2" label="Фильтровать"></v-text-field>
         </template>
@@ -113,7 +134,7 @@ function getColor(deliveryStatus: string): string {
             variant="text"
             border
             slim
-            @click="toggleExpand(internalItem)"
+            @click.stop="toggleExpand(internalItem)"
           ></v-btn>
         </template>
 
@@ -146,8 +167,8 @@ function getColor(deliveryStatus: string): string {
         </template>
         <template v-slot:item.id="{ value }" v-slot:append>
           <div class="d-flex ga-6 p-r-5 justify-end">
-            <v-icon color="secondary" icon="$edit" size="x-large" @click="editOrder(value)"></v-icon>
-            <v-icon color="disabled" icon="$delete" size="x-large" @click="deleteOrder(value)"></v-icon>
+            <v-icon color="secondary" icon="$edit" size="x-large" @click.stop="editOrder(value)"></v-icon>
+            <v-icon color="disabled" icon="$delete" size="x-large" @click.stop="deleteOrder(value)"></v-icon>
           </div>
         </template>
       </v-data-table>
